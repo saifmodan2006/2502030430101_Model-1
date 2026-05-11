@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Advanced IFrame Example</title>
+
+    <style>
+
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            margin: 20px;
+        }
+
+        h1{
+            color: darkblue;
+        }
+
+        .container{
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            margin: auto;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        iframe{
+            border: 5px solid darkblue;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        a{
+            text-decoration: none;
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 10px;
+            display: inline-block;
+        }
+
+        a:hover{
+            background-color: darkgreen;
+        }
+
+        marquee{
+            color: red;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Marquee -->
+    <marquee behavior="scroll" direction="left">
+        Welcome to Advanced HTML IFrame Example
+    </marquee>
+
+    <div class="container">
+
+        <h1>Advanced IFrame Demo</h1>
+
+        <p>
+            Click any button below to open the website inside the iframe.
+        </p>
+
+        <!-- Hyperlinks -->
+        <a href="https://www.wikipedia.org" target="myframe">
+            Open Wikipedia
+        </a>
+
+        <a href="https://www.google.com" target="myframe">
+            Open Google
+        </a>
+
+        <a href="https://www.youtube.com" target="myframe">
+            Open YouTube
+        </a>
+
+        <a href="https://www.w3schools.com" target="myframe">
+            Open W3Schools
+        </a>
+
+        <br><br>
+
+        <!-- IFrame -->
+        <iframe 
+            name="myframe"
+            src="https://www.wikipedia.org"
+            width="1000"
+            height="500"
+            allowfullscreen>
+        </iframe>
+
+        <br><br>
+
+        <!-- Embedded YouTube Video -->
+        <h2>YouTube Video Inside IFrame</h2>
+
+        <iframe
+            width="700"
+            height="400"
+            src="https://www.youtube.com/embed/tgbNymZ7vqY"
+            title="YouTube video"
+            frameborder="0"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+
+</body>
+</html>
