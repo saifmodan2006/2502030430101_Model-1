@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Cinematic Rocket Animation</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at top,#1b2735 0%,#090a0f 40%,#000 100%);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    font-family:sans-serif;
+}
+
+/* ========= STARS ========= */
+
+.stars{
+    position:absolute;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+.stars span{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    animation:blink 3s infinite ease-in-out;
+}
+
+/* Random Stars */
+
+.stars span:nth-child(1){top:10%;left:20%;}
+.stars span:nth-child(2){top:15%;left:70%;}
+.stars span:nth-child(3){top:30%;left:40%;}
+.stars span:nth-child(4){top:50%;left:90%;}
+.stars span:nth-child(5){top:70%;left:15%;}
+.stars span:nth-child(6){top:80%;left:60%;}
+.stars span:nth-child(7){top:60%;left:35%;}
+.stars span:nth-child(8){top:25%;left:85%;}
+.stars span:nth-child(9){top:90%;left:45%;}
+.stars span:nth-child(10){top:40%;left:10%;}
+
+/* ========= RGB PLANET ========= */
+
+.planet{
+    position:absolute;
+    width:350px;
+    height:350px;
+    border-radius:50%;
+    background:
+    conic-gradient(
+        from 0deg,
+        #ff0080,
+        #7928ca,
+        #00e5ff,
+        #00ff88,
+        #ffe600,
+        #ff4800,
+        #ff0080
+    );
+
+    animation:
+        rotatePlanet 12s linear infinite,
+        glowPlanet 6s ease-in-out infinite;
+
+    box-shadow:
+        0 0 40px rgba(255,0,128,0.6),
+        0 0 80px rgba(0,229,255,0.5),
+        0 0 120px rgba(0,255,136,0.4);
+}
+
+/* Planet Surface */
+
+.planet::before{
+    content:"";
+    position:absolute;
+    inset:18px;
+    border-radius:50%;
+    background:
+        radial-gradient(circle at 30% 30%,#0d1117,#000 70%);
+}
+
+/* Glow Ring */
+
+.planet::after{
+    content:"";
+    position:absolute;
+    inset:-15px;
+    border-radius:50%;
+    border:2px solid rgba(255,255,255,0.1);
+    filter:blur(8px);
+}
+
+/* ========= ORBIT ========= */
+
+.orbit{
+    position:absolute;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,0.08);
+    animation:rotateOrbit 18s linear infinite;
+}
+
+/* ========= ROCKET ========= */
+
+.rocket-wrapper{
+    position:absolute;
+    width:500px;
+    height:500px;
+    animation:rotateOrbit 8s linear infinite;
+}
+
+.rocket{
+    position:absolute;
+    top:-20px;
+    left:50%;
+    transform:translateX(-50%) rotate(90deg);
+    width:120px;
+    filter:
+        drop-shadow(0 0 15px rgba(255,100,0,0.9))
+        drop-shadow(0 0 30px rgba(255,255,255,0.4));
+}
+
+/* ========= FIRE ========= */
+
+.fire{
+    position:absolute;
+    top:95px;
+    left:50%;
+    transform:translateX(-50%);
+    width:24px;
+    height:70px;
+    background:
+        linear-gradient(
+            to bottom,
+            #fff,
+            #ffe600,
+            #ff7b00,
+            transparent
+        );
+
+    border-radius:50%;
+    filter:blur(3px);
+    animation:fireMove .15s infinite alternate;
+}
+
+/* ========= PARTICLES ========= */
+
+.particles{
+    position:absolute;
+    width:100%;
+    height:100%;
+}
+
+.particles span{
+    position:absolute;
+    width:4px;
+    height:4px;
+    border-radius:50%;
+    background:white;
+    animation:particleMove 4s linear infinite;
+    opacity:.7;
+}
+
+.particles span:nth-child(1){
+    left:20%;
+    animation-delay:0s;
+}
+
+.particles span:nth-child(2){
+    left:40%;
+    animation-delay:1s;
+}
+
+.particles span:nth-child(3){
+    left:60%;
+    animation-delay:2s;
+}
+
+.particles span:nth-child(4){
+    left:80%;
+    animation-delay:3s;
+}
+
+/* ========= ANIMATIONS ========= */
+
+@keyframes rotatePlanet{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes rotateOrbit{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes blink{
+    0%,100%{
+        opacity:1;
+    }
+    50%{
+        opacity:.2;
+    }
+}
+
+@keyframes glowPlanet{
+    0%,100%{
+        filter:hue-rotate(0deg);
+    }
+    50%{
+        filter:hue-rotate(180deg);
+    }
+}
+
+@keyframes fireMove{
+    from{
+        height:60px;
+        opacity:.8;
+    }
+    to{
+        height:80px;
+        opacity:1;
+    }
+}
+
+@keyframes particleMove{
+    from{
+        transform:translateY(-100vh);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    to{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Stars -->
+
+<div class="stars">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<!-- Space Particles -->
+
+<div class="particles">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<!-- RGB Planet -->
+
+<div class="planet"></div>
+
+<!-- Orbit -->
+
+<div class="orbit"></div>
+
+<!-- Rocket Orbiting -->
+
+<div class="rocket-wrapper">
+
+    <div class="rocket">
+
+        <!-- SVG Rocket -->
+
+        <svg viewBox="0 0 200 200" width="120">
+
+            <!-- Body -->
+
+            <path
+                d="
+                M100 20
+                C140 60 145 120 100 180
+                C55 120 60 60 100 20
+                "
+                fill="#d9e4ff"
+            />
+
+            <!-- Window -->
+
+            <circle
+                cx="100"
+                cy="80"
+                r="18"
+                fill="#00e5ff"
+                stroke="white"
+                stroke-width="5"
+            />
+
+            <!-- Left Wing -->
+
+            <path
+                d="M72 125 L40 155 L70 150 Z"
+                fill="#ff3d3d"
+            />
+
+            <!-- Right Wing -->
+
+            <path
+                d="M128 125 L160 155 L130 150 Z"
+                fill="#ff3d3d"
+            />
+
+            <!-- Nose -->
+
+            <path
+                d="M100 20 L115 45 L85 45 Z"
+                fill="#ff5757"
+            />
+
+            <!-- Fire -->
+
+            <path
+                d="
+                M100 180
+                C120 205 80 205 100 180
+                "
+                fill="#ff9900"
+            />
+
+        </svg>
+
+        <div class="fire"></div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+1.wirte a program to make a nested list using an order list and an unorder list 
+2.create a time table 
+3.craete a zebra pattern
+
+
+
+###CSS 
+SVG animation , object to animation

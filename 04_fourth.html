@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Elements Demo</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: darkblue;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            color: darkred;
+        }
+
+        a {
+            color: blue;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: red;
+        }
+
+        img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        audio,
+        video {
+            width: 100%;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+
+        marquee {
+            background: darkblue;
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>HTML Elements Example</h1>
+
+        <!-- Hyperlink -->
+        <div class="section">
+            <h2>1. Hyperlink</h2>
+
+            <a href="https://www.google.com" target="_blank">
+                Open Google Website
+            </a>
+        </div>
+
+        <!-- Image -->
+        <div class="section">
+            <h2>2. Image</h2>
+
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb"
+                alt="Nature Image">
+        </div>
+
+        <!-- Audio -->
+        <div class="section">
+            <h2>3. Audio</h2>
+
+            <audio controls>
+                <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                Your browser does not support audio.
+            </audio>
+        </div>
+
+        <!-- Video -->
+        <div class="section">
+            <h2>4. Video</h2>
+
+            <video controls autoplay muted>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Your browser does not support video.
+            </video>
+        </div>
+
+        <!-- Marquee -->
+        <div class="section">
+            <h2>5. Marquee</h2>
+
+            <marquee behavior="scroll" direction="left">
+                Welcome to HTML Learning 🚀 | Hyperlink | Image | Audio | Video | Marquee
+            </marquee>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
