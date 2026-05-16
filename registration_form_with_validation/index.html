@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form with Validation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-wrapper">
+            <h1>User Registration Form</h1>
+            <p class="subtitle">Complete all fields to register</p>
+
+            <form id="registrationForm" class="registration-form">
+                
+                <!-- Personal Information Section -->
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+                        <span class="error" id="fullNameError"></span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="your@email.com">
+                            <span class="error" id="emailError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 123-4567">
+                            <span class="error" id="phoneError"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="password">Password *</label>
+                            <input type="password" id="password" name="password" required placeholder="Min 8 characters">
+                            <span class="error" id="passwordError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password *</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Confirm your password">
+                            <span class="error" id="confirmPasswordError"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dob">Date of Birth *</label>
+                        <input type="date" id="dob" name="dob" required>
+                        <span class="error" id="dobError"></span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="gender">Gender *</label>
+                            <select id="gender" name="gender" required>
+                                <option value="">Select Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                                <option value="Prefer not to say">Prefer not to say</option>
+                            </select>
+                            <span class="error" id="genderError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Location/City *</label>
+                            <input type="text" id="location" name="location" required placeholder="City, Country">
+                            <span class="error" id="locationError"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bio">Bio/About You</label>
+                        <textarea id="bio" name="bio" rows="4" placeholder="Tell us about yourself..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="resumePdf">Upload Resume/CV (PDF) *</label>
+                        <div class="file-upload-wrapper">
+                            <input type="file" id="resumePdf" name="resumePdf" accept=".pdf" required>
+                            <span class="file-name" id="fileName">No file chosen</span>
+                        </div>
+                        <span class="file-info">Maximum file size: 5MB. Only PDF files accepted.</span>
+                        <span class="error" id="resumePdfError"></span>
+                    </div>
+                </fieldset>
+
+                <!-- Education Section -->
+                <fieldset>
+                    <legend>Education Information</legend>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="educationLevel">Education Level *</label>
+                            <select id="educationLevel" name="educationLevel" required>
+                                <option value="">Select Education Level</option>
+                                <option value="High School">High School</option>
+                                <option value="Bachelor's Degree">Bachelor's Degree</option>
+                                <option value="Master's Degree">Master's Degree</option>
+                                <option value="PhD">PhD</option>
+                                <option value="Diploma">Diploma</option>
+                                <option value="Certification">Certification</option>
+                            </select>
+                            <span class="error" id="educationLevelError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="fieldOfStudy">Field of Study *</label>
+                            <select id="fieldOfStudy" name="fieldOfStudy" required>
+                                <option value="">Select Field of Study</option>
+                                <option value="Computer Science">Computer Science</option>
+                                <option value="Engineering">Engineering</option>
+                                <option value="Business Administration">Business Administration</option>
+                                <option value="Medicine">Medicine</option>
+                                <option value="Law">Law</option>
+                                <option value="Arts & Humanities">Arts & Humanities</option>
+                                <option value="Science">Science</option>
+                                <option value="Social Sciences">Social Sciences</option>
+                                <option value="Finance">Finance</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <span class="error" id="fieldOfStudyError"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="institute">Institute/University *</label>
+                            <input type="text" id="institute" name="institute" required placeholder="Your school/college/university">
+                            <span class="error" id="instituteError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="graduationYear">Graduation Year *</label>
+                            <input type="number" id="graduationYear" name="graduationYear" required placeholder="YYYY" min="1980" max="2050">
+                            <span class="error" id="graduationYearError"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="certifications">Certifications/Licenses</label>
+                        <textarea id="certifications" name="certifications" rows="3" placeholder="List any relevant certifications (comma-separated)..."></textarea>
+                    </div>
+                </fieldset>
+
+                <!-- Occupation Section -->
+                <fieldset>
+                    <legend>Occupation Information</legend>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="jobTitle">Job Title *</label>
+                            <input type="text" id="jobTitle" name="jobTitle" required placeholder="Your job title">
+                            <span class="error" id="jobTitleError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company Name *</label>
+                            <input type="text" id="company" name="company" required placeholder="Current/Most Recent Company">
+                            <span class="error" id="companyError"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="industry">Industry *</label>
+                            <select id="industry" name="industry" required>
+                                <option value="">Select Industry</option>
+                                <option value="Technology">Technology</option>
+                                <option value="Healthcare">Healthcare</option>
+                                <option value="Finance">Finance</option>
+                                <option value="Retail">Retail</option>
+                                <option value="Manufacturing">Manufacturing</option>
+                                <option value="Education">Education</option>
+                                <option value="Government">Government</option>
+                                <option value="Energy">Energy</option>
+                                <option value="Telecommunications">Telecommunications</option>
+                                <option value="Transportation">Transportation</option>
+                                <option value="Media & Entertainment">Media & Entertainment</option>
+                                <option value="Hospitality">Hospitality</option>
+                                <option value="Startup">Startup</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <span class="error" id="industryError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="yearsExperience">Years of Experience *</label>
+                            <select id="yearsExperience" name="yearsExperience" required>
+                                <option value="">Select Experience</option>
+                                <option value="0-1">0-1 years</option>
+                                <option value="1-3">1-3 years</option>
+                                <option value="3-5">3-5 years</option>
+                                <option value="5-10">5-10 years</option>
+                                <option value="10-15">10-15 years</option>
+                                <option value="15+">15+ years</option>
+                            </select>
+                            <span class="error" id="yearsExperienceError"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="employmentType">Employment Type *</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="employmentType" value="Full-time" required> Full-time
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="employmentType" value="Part-time"> Part-time
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="employmentType" value="Freelance"> Freelance
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="employmentType" value="Self-employed"> Self-employed
+                            </label>
+                        </div>
+                        <span class="error" id="employmentTypeError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="workExperience">Work Experience/Summary</label>
+                        <textarea id="workExperience" name="workExperience" rows="3" placeholder="Briefly describe your work experience..."></textarea>
+                    </div>
+                </fieldset>
+
+                <!-- Social & Professional Profiles -->
+                <fieldset>
+                    <legend>Social & Professional Profiles</legend>
+
+                    <div class="form-group">
+                        <label for="linkedIn">LinkedIn Profile URL</label>
+                        <input type="url" id="linkedIn" name="linkedIn" placeholder="https://www.linkedin.com/in/yourprofile">
+                        <span class="error" id="linkedInError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="github">GitHub Profile URL</label>
+                        <input type="url" id="github" name="github" placeholder="https://github.com/yourprofile">
+                        <span class="error" id="githubError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="portfolio">Portfolio Website URL</label>
+                        <input type="url" id="portfolio" name="portfolio" placeholder="https://yourportfolio.com">
+                        <span class="error" id="portfolioError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="twitter">Twitter Profile URL</label>
+                        <input type="url" id="twitter" name="twitter" placeholder="https://twitter.com/yourprofile">
+                        <span class="error" id="twitterError"></span>
+                    </div>
+                </fieldset>
+
+                <!-- Terms & Agreement -->
+                <fieldset>
+                    <legend>Agreements</legend>
+
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="termsAgree" name="termsAgree" required>
+                        I agree to the Terms & Conditions *
+                    </label>
+                    <span class="error" id="termsAgreeError"></span>
+
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="privacyAgree" name="privacyAgree" required>
+                        I agree to the Privacy Policy *
+                    </label>
+                    <span class="error" id="privacyAgreeError"></span>
+
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="marketingAgree" name="marketingAgree">
+                        I want to receive marketing communications (optional)
+                    </label>
+                </fieldset>
+
+                <!-- Submit Buttons -->
+                <div class="button-group">
+                    <button type="reset" class="btn btn-secondary">Clear Form</button>
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </div>
+            </form>
+
+            <!-- Success Message -->
+            <div id="successMessage" class="success-message" style="display: none;">
+                <h2>✓ Registration Successful!</h2>
+                <p>Your registration has been submitted and saved.</p>
+                <div class="button-group">
+                    <button onclick="downloadJSON()" class="btn btn-primary">Download as JSON</button>
+                    <button onclick="viewJSON()" class="btn btn-secondary">View JSON Data</button>
+                    <button onclick="newRegistration()" class="btn btn-secondary">New Registration</button>
+                </div>
+            </div>
+
+            <!-- JSON Display Modal -->
+            <div id="jsonModal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h2>Registration Data (JSON)</h2>
+                    <pre id="jsonContent"></pre>
+                    <button onclick="copyToClipboard()" class="btn btn-primary">Copy to Clipboard</button>
+                </div>
+            </div>
+
+            <!-- Data List Section -->
+            <div id="dataListSection" style="margin-top: 40px; display: none;">
+                <h2>Submitted Registrations</h2>
+                <div id="dataList" class="data-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
