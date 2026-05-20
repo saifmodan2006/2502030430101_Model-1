@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form with Audio & Video</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 500px;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: darkblue;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #999;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .radio-group,
+        .checkbox-group {
+            margin-bottom: 15px;
+        }
+
+        .radio-group label,
+        .checkbox-group label {
+            display: inline-block;
+            font-weight: normal;
+            margin-right: 15px;
+            margin-top: 8px;
+        }
+
+        .radio-group input,
+        .checkbox-group input {
+            width: auto;
+            margin-right: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: green;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: darkgreen;
+            transform: scale(1.02);
+        }
+
+        .media-section {
+            margin-top: 25px;
+        }
+
+        .media-section h3 {
+            margin-bottom: 10px;
+            color: darkred;
+            text-align: center;
+        }
+
+        video,
+        audio {
+            width: 100%;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+
+        <h2>Registration Form</h2>
+
+        <form>
+
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter your name" required>
+
+            <label>Email</label>
+            <input type="email" placeholder="Enter your email" required>
+
+            <label>Password</label>
+            <input type="password" placeholder="Enter your password" required>
+
+            <label>Contact Number</label>
+            <input type="tel" placeholder="Enter contact number">
+
+            <label>Address</label>
+            <textarea rows="4" placeholder="Enter your address"></textarea>
+
+            <label>State</label>
+            <select>
+                <option>Select State</option>
+                <option>Gujarat</option>
+                <option>Maharashtra</option>
+                <option>Rajasthan</option>
+                <option>Delhi</option>
+            </select>
+
+            <label>Gender</label>
+
+            <div class="radio-group">
+                <label><input type="radio" name="gender"> Male</label>
+                <label><input type="radio" name="gender"> Female</label>
+                <label><input type="radio" name="gender"> Other</label>
+            </div>
+
+            <label>Hobbies</label>
+
+            <div class="checkbox-group">
+                <label><input type="checkbox"> Reading</label>
+                <label><input type="checkbox"> Gaming</label>
+                <label><input type="checkbox"> Music</label>
+                <label><input type="checkbox"> Movies</label>
+            </div>
+
+            <button type="submit">Register</button>
+
+        </form>
+
+        <!-- VIDEO & AUDIO SECTION -->
+
+        <div class="media-section">
+
+            <h3>Sample Video</h3>
+
+            <video controls autoplay muted>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Your browser does not support video.
+            </video>
+
+            <h3>Sample Audio</h3>
+
+            <audio controls>
+                <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                Your browser does not support audio.
+            </audio>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
