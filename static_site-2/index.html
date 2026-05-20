@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Immersive Experience - Award-Winning Design</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">3D</div>
+            <ul class="nav-menu">
+                <li><a href="#hero" class="nav-link">Home</a></li>
+                <li><a href="#showcase" class="nav-link">Showcase</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with 3D Canvas -->
+    <section id="hero" class="hero">
+        <canvas id="canvas"></canvas>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="word">Immersive</span>
+                <span class="word">3D</span>
+                <span class="word">Experience</span>
+            </h1>
+            <p class="hero-subtitle">Pushing the boundaries of web design</p>
+            <button class="cta-button" onclick="scrollTo('#showcase')">Explore Now</button>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Showcase Section -->
+    <section id="showcase" class="showcase">
+        <div class="section-header">
+            <h2>Creative Showcase</h2>
+            <p>Advanced interactions built with pure web technologies</p>
+        </div>
+        
+        <div class="showcase-grid">
+            <!-- Card 1 -->
+            <div class="showcase-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="icon icon-1">🎨</div>
+                        <h3>Design Excellence</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>Cutting-edge visual design with attention to every detail. Minimalist aesthetics combined with elegant interactions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="showcase-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="icon icon-2">⚡</div>
+                        <h3>Performance First</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>Optimized for speed and responsiveness. Smooth animations and fast load times deliver an exceptional user experience.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="showcase-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="icon icon-3">🎭</div>
+                        <h3>Interactive Magic</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>Engaging interactions that respond to user input. Dynamic content and intuitive navigation within the 3D environment.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="showcase-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="icon icon-4">📱</div>
+                        <h3>Fully Responsive</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>Perfect on every device. Desktop, tablet, or mobile - the experience adapts seamlessly to any screen size.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="showcase-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="icon icon-5">🔮</div>
+                        <h3>3D Innovation</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>Native browser 3D capabilities leveraged for stunning visual effects and immersive interactions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="showcase-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="icon icon-6">✨</div>
+                        <h3>Premium Feel</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>Carefully curated color schemes and elegant animations create a sophisticated, memorable impression.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="section-header">
+            <h2>Interactive Experience</h2>
+            <p>Hover over elements to see the magic happen</p>
+        </div>
+
+        <div class="experience-container">
+            <div class="floating-box box-1"></div>
+            <div class="floating-box box-2"></div>
+            <div class="floating-box box-3"></div>
+            
+            <div class="experience-content">
+                <div class="experience-item">
+                    <h3>Fluid Animations</h3>
+                    <p>Every interaction is smooth and responsive, creating a delightful user experience.</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Smart Performance</h3>
+                    <p>Advanced optimization techniques ensure blazing-fast performance on all devices.</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Accessible Design</h3>
+                    <p>WCAG compliance ensures everyone can enjoy this beautiful experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="section-header">
+            <h2>Get In Touch</h2>
+            <p>Let's create something amazing together</p>
+        </div>
+
+        <form class="contact-form">
+            <div class="form-group">
+                <input type="text" placeholder="Your Name" required>
+                <div class="input-line"></div>
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Your Email" required>
+                <div class="input-line"></div>
+            </div>
+            <div class="form-group">
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <div class="input-line"></div>
+            </div>
+            <button type="submit" class="submit-button">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 3D Immersive Experience. All rights reserved.</p>
+            <p>Built with HTML, CSS, and JavaScript | Pure Web Technologies</p>
+        </div>
+    </footer>
+
+    <!-- Three.js for 3D rendering -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
