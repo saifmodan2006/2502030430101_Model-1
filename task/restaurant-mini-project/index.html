@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spice Garden Restaurant</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- Bootstrap is used for the header container, navbar, grid, buttons, cards, carousel, modal, and form controls below. -->
+  <header class="top-bar py-3">
+    <div class="container">
+      <div class="text-center text-md-start">
+        <h1 class="display-5 fw-bold mb-1">Spice Garden</h1>
+        <p class="lead mb-0">Fresh flavors, warm service, unforgettable dining</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Bootstrap navbar classes: navbar, navbar-expand-lg, navbar-dark, navbar-toggler, collapse, navbar-nav, nav-item, nav-link. -->
+  <nav class="navbar navbar-expand-lg navbar-dark nav-glass sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="#home">Spice Garden</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-2">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Bootstrap utility classes in hero: d-flex, align-items-center, container, row, col-lg-6, text-white, btn. -->
+    <section id="home" class="hero-section d-flex align-items-center">
+      <div class="hero-overlay"></div>
+      <div class="container position-relative z-1">
+        <div class="row align-items-center min-vh-75 py-5">
+          <div class="col-lg-6 text-white">
+            <p class="text-uppercase fw-semibold letter-spacing mb-2">Welcome to Spice Garden</p>
+            <h2 class="display-4 fw-bold mb-3">Taste the best dishes crafted for every craving</h2>
+            <p class="fs-5 mb-4">From signature meals to chef specials, we bring together rich ingredients and modern hospitality.</p>
+            <button class="btn btn-warning btn-lg px-4 fw-semibold" data-bs-toggle="modal" data-bs-target="#orderModal">Order Now</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap carousel component: carousel, carousel-inner, carousel-item, carousel-caption, controls, and spacing utilities. -->
+    <section class="py-5 bg-light" aria-label="Featured food carousel">
+      <div class="container">
+        <div id="foodCarousel" class="carousel slide shadow rounded-4 overflow-hidden" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1400&q=80" class="d-block w-100 carousel-img" alt="Signature plated meal">
+              <div class="carousel-caption d-none d-md-block text-start">
+                <h5>Chef Signature Platter</h5>
+                <p>Fresh, vibrant, and made to impress.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="https://images.unsplash.com/photo-1499028344343-cd173ffc68a9?auto=format&fit=crop&w=1400&q=80" class="d-block w-100 carousel-img" alt="Healthy breakfast dish">
+              <div class="carousel-caption d-none d-md-block text-start">
+                <h5>Brunch Favorites</h5>
+                <p>Perfect for mornings, meetings, and family time.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1400&q=80" class="d-block w-100 carousel-img" alt="Dessert selection">
+              <div class="carousel-caption d-none d-md-block text-start">
+                <h5>Sweet Finish</h5>
+                <p>Delightful desserts to end your meal beautifully.</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#foodCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#foodCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap grid and cards for services: container, row, col-md-6, col-lg-3, shadow-sm, bg-white, text-center. -->
+    <section id="about" class="py-5">
+      <div class="container">
+        <div class="row mb-4">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="fw-bold">Our Services</h2>
+            <p class="text-muted mb-0">Everything you need for a smooth dining experience.</p>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="service-card h-100 text-center p-4 rounded-4 shadow-sm bg-white">
+              <div class="service-icon mb-3">D</div>
+              <h3 class="h5 fw-semibold">Delivery</h3>
+              <p class="text-muted mb-0">Fast and safe food delivery to your door.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="service-card h-100 text-center p-4 rounded-4 shadow-sm bg-white">
+              <div class="service-icon mb-3">B</div>
+              <h3 class="h5 fw-semibold">Online Booking</h3>
+              <p class="text-muted mb-0">Reserve your table in just a few clicks.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="service-card h-100 text-center p-4 rounded-4 shadow-sm bg-white">
+              <div class="service-icon mb-3">C</div>
+              <h3 class="h5 fw-semibold">Catering</h3>
+              <p class="text-muted mb-0">Perfect for parties, meetings, and events.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="service-card h-100 text-center p-4 rounded-4 shadow-sm bg-white">
+              <div class="service-icon mb-3">F</div>
+              <h3 class="h5 fw-semibold">Fast Service</h3>
+              <p class="text-muted mb-0">Quick, friendly, and attentive staff.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap responsive grid and cards for the menu: row, col-12, col-md-6, col-lg-4, card, card-body, btn. -->
+    <section id="menu" class="py-5 bg-light">
+      <div class="container">
+        <div class="row mb-4 align-items-end">
+          <div class="col-lg-8">
+            <h2 class="fw-bold">Popular Menu</h2>
+            <p class="text-muted mb-0">Six dishes arranged with Bootstrap grid for every screen size.</p>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card menu-card h-100 border-0 shadow-sm">
+              <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80" class="card-img-top" alt="Grilled chicken dish">
+              <div class="card-body">
+                <h3 class="h5 card-title">Grilled Chicken</h3>
+                <p class="card-text text-muted">Juicy grilled chicken with herbs.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fw-bold text-success">$18</span>
+                  <button class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#orderModal">Order</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card menu-card h-100 border-0 shadow-sm">
+              <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=900&q=80" class="card-img-top" alt="Pizza">
+              <div class="card-body">
+                <h3 class="h5 card-title">Cheese Pizza</h3>
+                <p class="card-text text-muted">Classic pizza with rich cheese.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fw-bold text-success">$15</span>
+                  <button class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#orderModal">Order</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card menu-card h-100 border-0 shadow-sm">
+              <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=900&q=80" class="card-img-top" alt="Healthy breakfast bowl">
+              <div class="card-body">
+                <h3 class="h5 card-title">Healthy Bowl</h3>
+                <p class="card-text text-muted">Balanced meal with fresh ingredients.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fw-bold text-success">$12</span>
+                  <button class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#orderModal">Order</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card menu-card h-100 border-0 shadow-sm">
+              <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=900&q=80" class="card-img-top" alt="Burger meal">
+              <div class="card-body">
+                <h3 class="h5 card-title">Burger Combo</h3>
+                <p class="card-text text-muted">Loaded burger with crispy fries.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fw-bold text-success">$16</span>
+                  <button class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#orderModal">Order</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card menu-card h-100 border-0 shadow-sm">
+              <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80" class="card-img-top" alt="Rice and curry dish">
+              <div class="card-body">
+                <h3 class="h5 card-title">Curry Rice</h3>
+                <p class="card-text text-muted">Flavorful curry served with rice.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fw-bold text-success">$14</span>
+                  <button class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#orderModal">Order</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card menu-card h-100 border-0 shadow-sm">
+              <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=900&q=80" class="card-img-top" alt="Dessert">
+              <div class="card-body">
+                <h3 class="h5 card-title">Chocolate Dessert</h3>
+                <p class="card-text text-muted">Sweet treat made for celebrations.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fw-bold text-success">$9</span>
+                  <button class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#orderModal">Order</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap gallery layout: container, row, col-12, col-md-6, col-lg-4, img-fluid, rounded-4. -->
+    <section id="gallery" class="py-5">
+      <div class="container">
+        <div class="row mb-4">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="fw-bold">Gallery</h2>
+            <p class="text-muted mb-0">A responsive image grid with subtle hover effects.</p>
+          </div>
+        </div>
+        <div class="row g-3 gallery-grid">
+          <div class="col-12 col-md-6 col-lg-4"><img class="img-fluid rounded-4 gallery-img" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80" alt="Restaurant dining area"></div>
+          <div class="col-12 col-md-6 col-lg-4"><img class="img-fluid rounded-4 gallery-img" src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=80" alt="Plated meal"></div>
+          <div class="col-12 col-md-6 col-lg-4"><img class="img-fluid rounded-4 gallery-img" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80" alt="Table setting"></div>
+          <div class="col-12 col-md-6 col-lg-4"><img class="img-fluid rounded-4 gallery-img" src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=900&q=80" alt="Chef kitchen scene"></div>
+          <div class="col-12 col-md-6 col-lg-4"><img class="img-fluid rounded-4 gallery-img" src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=900&q=80" alt="Dessert plate"></div>
+          <div class="col-12 col-md-6 col-lg-4"><img class="img-fluid rounded-4 gallery-img" src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=900&q=80" alt="Fresh salad"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap review cards and grid: row, col-md-6, col-lg-4, card, shadow-sm, d-flex, gap-3. -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="row mb-4">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="fw-bold">What Customers Say</h2>
+            <p class="text-muted mb-0">Real feedback from happy guests.</p>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="card border-0 shadow-sm h-100 review-card">
+              <div class="card-body">
+                <div class="d-flex align-items-center gap-3 mb-3">
+                  <img class="rounded-circle review-avatar" src="https://i.pravatar.cc/120?img=12" alt="Customer Sarah">
+                  <div>
+                    <h3 class="h6 mb-1">Sarah M.</h3>
+                    <div class="text-warning">★★★★★</div>
+                  </div>
+                </div>
+                <p class="text-muted mb-0">The food was fresh and the service was excellent. I’ll be back soon.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card border-0 shadow-sm h-100 review-card">
+              <div class="card-body">
+                <div class="d-flex align-items-center gap-3 mb-3">
+                  <img class="rounded-circle review-avatar" src="https://i.pravatar.cc/120?img=32" alt="Customer John">
+                  <div>
+                    <h3 class="h6 mb-1">John D.</h3>
+                    <div class="text-warning">★★★★☆</div>
+                  </div>
+                </div>
+                <p class="text-muted mb-0">Great ambience, fast service, and the menu has something for everyone.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card border-0 shadow-sm h-100 review-card">
+              <div class="card-body">
+                <div class="d-flex align-items-center gap-3 mb-3">
+                  <img class="rounded-circle review-avatar" src="https://i.pravatar.cc/120?img=47" alt="Customer Priya">
+                  <div>
+                    <h3 class="h6 mb-1">Priya K.</h3>
+                    <div class="text-warning">★★★★★</div>
+                  </div>
+                </div>
+                <p class="text-muted mb-0">Perfect for family dinners. The booking process was also very easy.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap form and layout classes: row, col-lg-5, col-lg-7, card, form-label, form-control, btn. -->
+    <section id="contact" class="py-5">
+      <div class="container">
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-5">
+            <div class="contact-info p-4 p-lg-5 rounded-4 h-100 text-white">
+              <h2 class="fw-bold mb-3">Contact & Reservation</h2>
+              <p class="mb-4">Book a table or ask us about catering, events, and private dining.</p>
+              <p class="mb-2"><strong>Address:</strong> 123 Food Street, Flavor City</p>
+              <p class="mb-2"><strong>Phone:</strong> +1 (555) 123-4567</p>
+              <p class="mb-0"><strong>Email:</strong> hello@spicegarden.com</p>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body p-4 p-lg-5">
+                <form>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label for="name" class="form-label">Name</label>
+                      <input type="text" class="form-control form-control-lg" id="name" placeholder="Your name">
+                    </div>
+                    <div class="col-md-6">
+                      <label for="email" class="form-label">Email</label>
+                      <input type="email" class="form-control form-control-lg" id="email" placeholder="Your email">
+                    </div>
+                    <div class="col-md-6">
+                      <label for="phone" class="form-label">Phone</label>
+                      <input type="tel" class="form-control form-control-lg" id="phone" placeholder="Your phone number">
+                    </div>
+                    <div class="col-12">
+                      <label for="message" class="form-label">Message</label>
+                      <textarea class="form-control" id="message" rows="5" placeholder="Tell us your reservation or inquiry"></textarea>
+                    </div>
+                    <div class="col-12">
+                      <button type="submit" class="btn btn-dark btn-lg px-4">Submit</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Bootstrap modal component: modal, modal-dialog, modal-content, modal-header, modal-body, btn-close. -->
+  <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 rounded-4 overflow-hidden">
+        <div class="modal-header bg-dark text-white">
+          <h5 class="modal-title" id="orderModalLabel">Place Your Order</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <form>
+            <div class="mb-3">
+              <label class="form-label" for="orderName">Name</label>
+              <input class="form-control" id="orderName" type="text" placeholder="Your name">
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="orderItem">Item</label>
+              <input class="form-control" id="orderItem" type="text" placeholder="Selected food item">
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="orderAddress">Delivery Address</label>
+              <textarea class="form-control" id="orderAddress" rows="3" placeholder="Enter delivery address"></textarea>
+            </div>
+            <button type="submit" class="btn btn-warning fw-semibold w-100">Confirm Order</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap footer spacing and responsive alignment: py-4, row, col-md-4, text-center, text-md-start, text-md-end. -->
+  <footer class="footer-section py-4 text-white">
+    <div class="container">
+      <div class="row g-3 align-items-center">
+        <div class="col-md-4 text-center text-md-start">
+          <h3 class="h5 fw-semibold mb-1">Spice Garden</h3>
+          <p class="mb-0">123 Food Street, Flavor City</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <a class="footer-link me-3" href="#">Facebook</a>
+          <a class="footer-link me-3" href="#">Instagram</a>
+          <a class="footer-link" href="#">Twitter</a>
+        </div>
+        <div class="col-md-4 text-center text-md-end">
+          <p class="mb-0">Contact: +1 (555) 123-4567</p>
+          <p class="mb-0">&copy; <span id="year"></span> Spice Garden. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

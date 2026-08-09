@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="L'Ambroisie — An exquisite fine dining sanctuary offering artisanal gastronomy, wood-fired delights, hand-crafted pastas, and curated vintage wines in a luxurious, editorial atmosphere.">
+  <meta name="author" content="L'Ambroisie Gastronomy">
+  <title>L'Ambroisie | Haute Gastronomie Parisienne</title>
+
+  <!-- Favicon Link -->
+  <link rel="icon" type="image/png" href="assets/menu_drink.png">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Google Fonts: Playfair Display for luxury serif & Inter for modern minimalist body copy -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Material Icons for Modern Minimalist UI -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Custom Tailwind Config -->
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "background": "#08080C", // Obsidian foundation
+            "surface": "#12131A", // Deep Slate surface
+            "surface-container": "#1F1F24",
+            "primary": "#C5A059", // Classic Gold
+            "primary-light": "#e9c176", // Radiant Gold
+            "on-surface": "#e4e1e8",
+            "on-surface-muted": "#9a8f80", // Muted outline/text tone
+            "border-gold": "rgba(197, 160, 89, 0.08)",
+          },
+          fontFamily: {
+            serif: ["Playfair Display", "serif"],
+            sans: ["Inter", "sans-serif"],
+          },
+          spacing: {
+            "section-gap": "140px",
+            "margin-mobile": "24px",
+            "margin-desktop": "80px",
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Premium Effects Style -->
+  <style>
+    /* Custom Scrollbar - Quiet, thin, luxury look */
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #08080C;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(197, 160, 89, 0.25);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(197, 160, 89, 0.5);
+    }
+
+    /* Soft transition system */
+    * {
+      transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Subtle image hover scale */
+    .img-zoom-container {
+      overflow: hidden;
+      position: relative;
+    }
+    .img-zoom-container img {
+      transition: transform 1.6s cubic-bezier(0.16, 1, 0.3, 1), filter 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .img-zoom-container:hover img {
+      transform: scale(1.03);
+    }
+
+    /* Sleek editorial gold line */
+    .link-underline {
+      position: relative;
+    }
+    .link-underline::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 50%;
+      width: 0;
+      height: 1px;
+      background: #C5A059;
+      transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1), left 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .link-underline:hover::after, .link-underline.active::after {
+      width: 100%;
+      left: 0;
+    }
+
+    /* Hide scrollbars */
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Elegant Reveal Animations */
+    .reveal-element {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-element.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Elegant Luxury Input Styling */
+    .luxury-input {
+      position: relative;
+    }
+    .luxury-input::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 1px;
+      background: #e9c176;
+      transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1), left 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .luxury-input-focus-container:focus-within::after {
+      width: 100%;
+      left: 0;
+    }
+
+    /* Shimmer Button Effect */
+    .btn-shimmer {
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-shimmer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -150%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.15), transparent);
+      transform: skewX(-25deg);
+      transition: 0.75s;
+    }
+    .btn-shimmer:hover::before {
+      left: 150%;
+      transition: 0.75s;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-sans antialiased overflow-x-hidden selection:bg-primary/20 selection:text-primary-light">
+
+  <!-- ================= HEADER / TOP NAVIGATION ================= -->
+  <header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-white/[0.03] transition-all duration-500 py-6 md:py-8" id="mainHeader">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-margin-desktop flex justify-between items-center">
+      
+      <!-- Logo + Burger menu -->
+      <div class="flex items-center gap-6">
+        <button class="flex items-center gap-2 group md:hidden text-primary hover:text-white transition-colors" id="burgerBtn" aria-label="Open Navigation Menu">
+          <span class="material-symbols-outlined text-2xl font-light">menu</span>
+        </button>
+        <a href="#home" class="flex flex-col select-none">
+          <span class="font-serif tracking-[0.25em] text-2xl text-primary-light font-light leading-none">L'AMBROISIE</span>
+          <span class="text-[7px] tracking-[0.45em] text-on-surface-muted uppercase mt-1.5 font-light">HAUTE GASTRONOMIE &bull; PARIS</span>
+        </a>
+      </div>
+
+      <!-- Desktop Navbar - Editorial minimalist spacing -->
+      <nav class="hidden md:flex items-center gap-10">
+        <a class="font-sans text-[9px] tracking-[0.35em] font-light text-primary-light link-underline active" href="#home">HOME</a>
+        <a class="font-sans text-[9px] tracking-[0.35em] font-light text-on-surface/70 hover:text-primary transition-colors link-underline" href="#about">HERITAGE</a>
+        <a class="font-sans text-[9px] tracking-[0.35em] font-light text-on-surface/70 hover:text-primary transition-colors link-underline" href="#menu">MASTERPIECES</a>
+        <a class="font-sans text-[9px] tracking-[0.35em] font-light text-on-surface/70 hover:text-primary transition-colors link-underline" href="#offers">EXPERIENCES</a>
+        <a class="font-sans text-[9px] tracking-[0.35em] font-light text-on-surface/70 hover:text-primary transition-colors link-underline" href="#gallery">GALLERY</a>
+        <a class="font-sans text-[9px] tracking-[0.35em] font-light text-on-surface/70 hover:text-primary transition-colors link-underline" href="#reviews">CRITIQUES</a>
+      </nav>
+
+      <!-- Sleek border button -->
+      <a href="#reserve" class="btn-shimmer hidden sm:inline-block border border-primary/40 text-primary-light hover:border-primary-light hover:bg-primary-light/5 font-sans text-[9px] font-medium px-6 py-2.5 uppercase tracking-[0.3em] transition-all rounded-none">
+        Book Passage
+      </a>
+    </div>
+  </header>
+
+  <!-- ================= MOBILE NAVIGATION OVERLAY ================= -->
+  <div class="fixed inset-0 z-50 pointer-events-none opacity-0 transition-opacity duration-500" id="drawerOverlay">
+    <!-- Solid dark backdrop -->
+    <div class="absolute inset-0 bg-background/98 pointer-events-auto" id="drawerBackdrop"></div>
+    
+    <!-- Large structural menu -->
+    <aside class="absolute inset-0 flex flex-col justify-between p-12 pointer-events-auto" id="drawerAside">
+      <div class="flex justify-between items-center">
+        <div class="flex flex-col">
+          <span class="font-serif tracking-[0.25em] text-2xl text-primary-light font-light leading-none">L'AMBROISIE</span>
+          <span class="text-[7px] tracking-[0.45em] text-on-surface-muted uppercase mt-1.5 font-light">HAUTE GASTRONOMIE &bull; PARIS</span>
+        </div>
+        <button class="material-symbols-outlined text-primary text-3xl font-light hover:text-white" id="closeDrawerBtn">
+          close
+        </button>
+      </div>
+
+      <!-- Centered huge vertical links -->
+      <nav class="flex flex-col items-center gap-8 my-auto select-none">
+        <a class="font-serif text-3xl tracking-widest text-primary-light hover:text-white transition-colors" href="#home" onclick="closeDrawer()">Home</a>
+        <a class="font-serif text-3xl tracking-widest text-on-surface/80 hover:text-primary transition-colors" href="#about" onclick="closeDrawer()">Heritage</a>
+        <a class="font-serif text-3xl tracking-widest text-on-surface/80 hover:text-primary transition-colors" href="#menu" onclick="closeDrawer()">Masterpieces</a>
+        <a class="font-serif text-3xl tracking-widest text-on-surface/80 hover:text-primary transition-colors" href="#offers" onclick="closeDrawer()">Experiences</a>
+        <a class="font-serif text-3xl tracking-widest text-on-surface/80 hover:text-primary transition-colors" href="#gallery" onclick="closeDrawer()">Gallery</a>
+        <a class="font-serif text-3xl tracking-widest text-on-surface/80 hover:text-primary transition-colors" href="#reviews" onclick="closeDrawer()">Critiques</a>
+      </nav>
+
+      <!-- Bottom contacts -->
+      <div class="flex justify-between items-end border-t border-white/[0.05] pt-8">
+        <div class="font-serif text-xs text-on-surface-muted italic">
+          9 Place des Vosges, Paris
+        </div>
+        <a href="#reserve" class="border border-primary/30 text-primary-light px-6 py-2.5 text-[9px] tracking-[0.3em] uppercase" onclick="closeDrawer()">
+          Book Table
+        </a>
+      </div>
+    </aside>
+  </div>
+
+  <main>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="relative min-h-screen flex items-center px-6 md:px-margin-desktop py-32 overflow-hidden" id="home">
+      <!-- Full screen atmospheric image with custom editorial crop -->
+      <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-background/75 z-10"></div> <!-- Subtle darkening overlay -->
+        <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/40 z-10"></div>
+        <img class="w-full h-full object-cover scale-105 opacity-35 select-none pointer-events-none" alt="Atmospheric dimly-lit luxury dining table" src="assets/hero_bg.png"/>
+      </div>
+      
+      <!-- Editorial layout container -->
+      <div class="relative z-20 max-w-[1400px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-8 reveal-element revealed">
+          <span class="font-sans text-[10px] font-light text-primary tracking-[0.45em] uppercase mb-6 block">ESTABLISHED 2008 &bull; PLACE DES VOSGES</span>
+          
+          <h1 class="font-serif text-[46px] sm:text-[72px] lg:text-[88px] text-white mb-8 leading-[1.08] font-light tracking-tight">
+            Gastronomy is <br>an <span class="italic text-primary-light font-normal">art of the senses</span>
+          </h1>
+          
+          <p class="font-sans text-xs md:text-sm text-on-surface-muted max-w-lg mb-12 leading-relaxed font-light">
+            We invite you into a silent dialogue between raw local nature and absolute refinement. Here, deep shadows frame organic culinary poetry, and every guest serves as an honored witness to the craft.
+          </p>
+          
+          <!-- Actions - Sleek text indicators -->
+          <div class="flex flex-col sm:flex-row gap-8 items-start sm:items-center">
+            <a href="#menu" class="btn-shimmer border border-primary text-background bg-primary hover:bg-transparent hover:text-primary-light hover:border-primary-light font-sans text-[10px] font-medium px-8 py-4 uppercase tracking-[0.3em] transition-all rounded-none">
+              Discover Menu
+            </a>
+            <a href="#reserve" class="group flex items-center gap-3 font-sans text-[10px] tracking-[0.3em] text-on-surface hover:text-primary-light uppercase transition-colors">
+              Reserve Passage <span class="material-symbols-outlined text-base group-hover:translate-x-1.5 transition-transform">arrow_right_alt</span>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Large elegant floating motto on desktop -->
+        <div class="hidden lg:flex lg:col-span-4 justify-end">
+          <div class="border-l border-primary/20 pl-8 py-4">
+            <span class="font-serif text-2xl italic text-primary/75 font-light block mb-4">"Silence, details, excellence."</span>
+            <p class="font-sans text-[9px] tracking-[0.2em] text-on-surface-muted uppercase">&mdash; Antoine Laurent</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HERITAGE SECTION ================= -->
+    <section class="py-32 max-w-[1400px] mx-auto px-6 md:px-margin-desktop reveal-element" id="about">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
+        
+        <!-- Image block with asymmetrical styling -->
+        <div class="lg:col-span-6 w-full max-w-md lg:max-w-full mx-auto lg:mx-0">
+          <div class="img-zoom-container rounded-none aspect-[3/4] bg-surface border border-white/[0.03] shadow-2xl relative">
+            <img alt="Chef Antoine Laurent plating meticulously" class="w-full h-full object-cover grayscale opacity-90" src="assets/chef.png" loading="lazy"/>
+            <!-- Understated minimal caption overlay -->
+            <div class="absolute bottom-4 left-4 bg-background/90 backdrop-blur-sm px-4 py-2 text-[9px] tracking-[0.2em] text-primary-light uppercase border border-white/[0.05]">
+              Antoine Laurent Plating &bull; Craft
+            </div>
+          </div>
+        </div>
+
+        <!-- Copy details -->
+        <div class="lg:col-span-6 flex flex-col justify-center">
+          <span class="font-sans text-[10px] font-light text-primary tracking-[0.35em] uppercase mb-4">OUR HERITAGE</span>
+          <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl text-white mb-8 font-light leading-tight">
+            Refined by Time, <br>Driven by <span class="italic text-primary-light font-normal">Pure Passion</span>
+          </h2>
+          
+          <p class="font-sans text-xs md:text-sm text-on-surface-muted mb-6 leading-relaxed font-light">
+            Founded fifteen years ago at Place des Vosges, L'Ambroisie serves as an editorial temple of modern French dining. We believe that fine dining is more than just feeding the body; it is a sensory discipline designed to spark permanent emotions, memories, and quiet connections.
+          </p>
+          <p class="font-sans text-xs md:text-sm text-on-surface-muted/80 mb-12 leading-relaxed font-light">
+            Every single ingredient that enters our kitchen is tracked back to its cooperative roots. We coordinate daily with sustainable fisheries, elite micro-growers, and traditional family cooperatives to secure components of unparalleled purity.
+          </p>
+
+          <!-- Signature block -->
+          <div class="flex items-center gap-8 pt-8 border-t border-white/[0.05]">
+            <div class="w-10 h-[1px] bg-primary/40"></div>
+            <div>
+              <span class="font-serif text-3xl text-primary font-light italic">Antoine Laurent</span>
+              <span class="block text-[9px] tracking-[0.25em] text-on-surface-muted uppercase mt-2 font-light">MASTER CHEF & FOUNDER</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= MASTERPIECES SECTION ================= -->
+    <section class="py-32 bg-surface/10 border-y border-white/[0.02]" id="menu">
+      <div class="px-6 md:px-margin-desktop max-w-[1400px] mx-auto reveal-element">
+        
+        <!-- Header -->
+        <div class="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-20">
+          <div class="max-w-xl">
+            <span class="font-sans text-[10px] font-light text-primary tracking-[0.35em] uppercase mb-4 block">GASTRONOMIC JOURNAL</span>
+            <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl text-white uppercase font-light tracking-wide">The Masterpieces</h2>
+          </div>
+          <p class="font-sans text-xs text-on-surface-muted max-w-sm font-light leading-relaxed">
+            A quiet collection of our seasonal chef creations, balancing absolute clarity of flavor with organic hand-plated architecture.
+          </p>
+        </div>
+
+        <!-- Filter tabs - Minimalist editorial list -->
+        <div class="flex justify-start gap-8 overflow-x-auto hide-scrollbar pb-6 mb-16 border-b border-white/[0.04]" id="filters-container">
+          <button class="filter-btn text-[9px] tracking-[0.3em] font-medium text-primary-light active" data-category="all">ALL CREATIONS</button>
+          <button class="filter-btn text-[9px] tracking-[0.3em] font-medium text-on-surface-muted hover:text-primary transition-colors" data-category="signature">SIGNATURES</button>
+          <button class="filter-btn text-[9px] tracking-[0.3em] font-medium text-on-surface-muted hover:text-primary transition-colors" data-category="pasta">PASTA & MAINS</button>
+          <button class="filter-btn text-[9px] tracking-[0.3em] font-medium text-on-surface-muted hover:text-primary transition-colors" data-category="dessert">DESSERTS</button>
+          <button class="filter-btn text-[9px] tracking-[0.3em] font-medium text-on-surface-muted hover:text-primary transition-colors" data-category="drinks">MIXOLOGY</button>
+        </div>
+
+        <!-- Asymmetric Menu Layout: Blends gorgeous photography with high-end menu listings -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start" id="menu-container">
+          
+          <!-- LEFT SIDE: The Menu Sheet (Physical restaurant menu aesthetic with dot leaders) -->
+          <div class="lg:col-span-7 flex flex-col gap-10" id="menu-list">
+            
+            <!-- Dish 1 -->
+            <div class="menu-item-transition flex flex-col group" data-category="signature">
+              <div class="flex justify-between items-baseline gap-4 mb-2">
+                <h3 class="font-serif text-xl sm:text-2xl text-white font-light group-hover:text-primary-light transition-colors">Truffle & Forest Fungi</h3>
+                <!-- Custom elegant dot leader -->
+                <div class="flex-1 border-b border-dotted border-white/10 mx-2 self-end h-1"></div>
+                <span class="font-sans text-sm font-light text-primary-light tracking-widest">$32</span>
+              </div>
+              <p class="font-sans text-[11px] text-on-surface-muted leading-relaxed font-light mb-2 max-w-xl">
+                Hand-stretched organic sourdough base, wood-fired with creamed truffles, chanterelle mushrooms, and fresh sweet basil.
+              </p>
+              <div class="flex items-center gap-4">
+                <span class="text-[9px] tracking-widest text-primary uppercase font-light">Signature Choice</span>
+                <a href="#reserve" class="font-sans text-[9px] tracking-widest text-on-surface-muted hover:text-primary-light uppercase transition-colors border-b border-white/5 hover:border-primary-light/40 pb-0.5">Request Passage</a>
+              </div>
+            </div>
+
+            <!-- Dish 2 -->
+            <div class="menu-item-transition flex flex-col group" data-category="signature">
+              <div class="flex justify-between items-baseline gap-4 mb-2">
+                <h3 class="font-serif text-xl sm:text-2xl text-white font-light group-hover:text-primary-light transition-colors">The Wagyu Gold Burger</h3>
+                <!-- Custom elegant dot leader -->
+                <div class="flex-1 border-b border-dotted border-white/10 mx-2 self-end h-1"></div>
+                <span class="font-sans text-sm font-light text-primary-light tracking-widest">$38</span>
+              </div>
+              <p class="font-sans text-[11px] text-on-surface-muted leading-relaxed font-light mb-2 max-w-xl">
+                Aged Wagyu, glazed with balsamic reduction, sweet caramelized onions, melted gruyère, and fresh black truffle emulsion.
+              </p>
+              <div class="flex items-center gap-4">
+                <span class="text-[9px] tracking-widest text-primary uppercase font-light">Chef Speciality</span>
+                <a href="#reserve" class="font-sans text-[9px] tracking-widest text-on-surface-muted hover:text-primary-light uppercase transition-colors border-b border-white/5 hover:border-primary-light/40 pb-0.5">Request Passage</a>
+              </div>
+            </div>
+
+            <!-- Dish 3 -->
+            <div class="menu-item-transition flex flex-col group" data-category="pasta">
+              <div class="flex justify-between items-baseline gap-4 mb-2">
+                <h3 class="font-serif text-xl sm:text-2xl text-white font-light group-hover:text-primary-light transition-colors">Tagliatelle Carbonara</h3>
+                <!-- Custom elegant dot leader -->
+                <div class="flex-1 border-b border-dotted border-white/10 mx-2 self-end h-1"></div>
+                <span class="font-sans text-sm font-light text-primary-light tracking-widest">$29</span>
+              </div>
+              <p class="font-sans text-[11px] text-on-surface-muted leading-relaxed font-light mb-2 max-w-xl">
+                Hand-rolled flat ribbon pasta tossed with aged guanciale, creamy organic egg yolks, cracked black pepper, and summer truffles.
+              </p>
+              <div class="flex items-center gap-4">
+                <span class="text-[9px] tracking-widest text-primary uppercase font-light">Artisanal Pasta</span>
+                <a href="#reserve" class="font-sans text-[9px] tracking-widest text-on-surface-muted hover:text-primary-light uppercase transition-colors border-b border-white/5 hover:border-primary-light/40 pb-0.5">Request Passage</a>
+              </div>
+            </div>
+
+            <!-- Dish 4 -->
+            <div class="menu-item-transition flex flex-col group" data-category="dessert">
+              <div class="flex justify-between items-baseline gap-4 mb-2">
+                <h3 class="font-serif text-xl sm:text-2xl text-white font-light group-hover:text-primary-light transition-colors">Grand Cru Soufflé</h3>
+                <!-- Custom elegant dot leader -->
+                <div class="flex-1 border-b border-dotted border-white/10 mx-2 self-end h-1"></div>
+                <span class="font-sans text-sm font-light text-primary-light tracking-widest">$18</span>
+              </div>
+              <p class="font-sans text-[11px] text-on-surface-muted leading-relaxed font-light mb-2 max-w-xl">
+                Decadent warm cake crafted from 72% single-origin dark chocolate, paired with a quenelle of Madagascar vanilla bean gelato.
+              </p>
+              <div class="flex items-center gap-4">
+                <span class="text-[9px] tracking-widest text-primary uppercase font-light">Sweet Creation</span>
+                <a href="#reserve" class="font-sans text-[9px] tracking-widest text-on-surface-muted hover:text-primary-light uppercase transition-colors border-b border-white/5 hover:border-primary-light/40 pb-0.5">Request Passage</a>
+              </div>
+            </div>
+
+            <!-- Dish 5 -->
+            <div class="menu-item-transition flex flex-col group" data-category="drinks">
+              <div class="flex justify-between items-baseline gap-4 mb-2">
+                <h3 class="font-serif text-xl sm:text-2xl text-white font-light group-hover:text-primary-light transition-colors">Smoked Rosemary</h3>
+                <!-- Custom elegant dot leader -->
+                <div class="flex-1 border-b border-dotted border-white/10 mx-2 self-end h-1"></div>
+                <span class="font-sans text-sm font-light text-primary-light tracking-widest">$22</span>
+              </div>
+              <p class="font-sans text-[11px] text-on-surface-muted leading-relaxed font-light mb-2 max-w-xl">
+                Bourbon infused with orange bitters, slow-stirred, and served over a single clear spherical ice cube inside a cedar-wood smoked glass.
+              </p>
+              <div class="flex items-center gap-4">
+                <span class="text-[9px] tracking-widest text-primary uppercase font-light">Architectural Mixology</span>
+                <a href="#reserve" class="font-sans text-[9px] tracking-widest text-on-surface-muted hover:text-primary-light uppercase transition-colors border-b border-white/5 hover:border-primary-light/40 pb-0.5">Request Passage</a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- RIGHT SIDE: Rotating Exquisite Photo Frame -->
+          <div class="lg:col-span-5 hidden lg:block sticky top-32">
+            <div class="border border-white/[0.04] bg-surface p-4 aspect-[4/5] relative flex items-center justify-center overflow-hidden">
+              <div class="absolute inset-0 bg-background/20 z-10 pointer-events-none"></div>
+              
+              <!-- Images mapped to category highlights -->
+              <div class="w-full h-full relative" id="menu-image-rotator">
+                <!-- Pizza -->
+                <img src="assets/menu_pizza.png" id="img-signature" class="menu-rotator-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100 grayscale hover:grayscale-0" alt="Wood fired pizza preview">
+                <!-- Pasta -->
+                <img src="assets/menu_pasta.png" id="img-pasta" class="menu-rotator-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0 grayscale hover:grayscale-0" alt="Fresh tagliatelle carbonara preview">
+                <!-- Dessert -->
+                <img src="assets/menu_dessert.png" id="img-dessert" class="menu-rotator-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0 grayscale hover:grayscale-0" alt="Chocolate souffle preview">
+                <!-- Drink -->
+                <img src="assets/menu_drink.png" id="img-drinks" class="menu-rotator-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0 grayscale hover:grayscale-0" alt="Smoked rosemary cocktail preview">
+              </div>
+
+              <!-- Small minimalist border accent label -->
+              <div class="absolute bottom-6 right-6 z-20 bg-background/90 px-4 py-2 border border-white/[0.04] text-[9px] tracking-[0.2em] uppercase text-primary-light">
+                MASTERPIECE PRESENTATION
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= CURATED PACKAGES / EXPERIENCES SECTION ================= -->
+    <section class="py-32 max-w-[1400px] mx-auto px-6 md:px-margin-desktop reveal-element" id="offers">
+      
+      <!-- Header -->
+      <div class="text-center max-w-xl mx-auto mb-24">
+        <span class="font-sans text-[10px] font-light text-primary tracking-[0.35em] uppercase mb-4 block">CURATED ENCOUNTERS</span>
+        <h2 class="font-serif text-4xl md:text-5xl text-white mb-6 uppercase tracking-wider font-light">Gastronomic Experiences</h2>
+        <div class="w-12 h-[1px] bg-primary/30 mx-auto"></div>
+      </div>
+
+      <!-- Clean editorial grid with minimal lines -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-16 lg:gap-12 divide-y lg:divide-y-0 lg:divide-x divide-white/[0.05]">
+        
+        <!-- Experience 1 -->
+        <div class="flex flex-col justify-between pt-12 lg:pt-0 lg:px-8">
+          <div>
+            <span class="text-[9px] tracking-widest text-primary uppercase font-light">SEASONAL TASTING</span>
+            <h3 class="font-serif text-3xl text-white font-light my-6">Grand Tasting Menu</h3>
+            <p class="font-sans text-xs text-on-surface-muted leading-relaxed font-light mb-8">
+              A luxurious 7-course seasonal chef demonstration menu composed of pristine ingredients, completely tailored with custom sommeliers-matched wine pairings.
+            </p>
+          </div>
+
+          <div class="mt-auto">
+            <div class="mb-8 font-sans">
+              <span class="text-2xl font-light text-primary-light font-serif italic">One Hundred &amp; Seventy-Five</span>
+              <span class="text-[9px] text-on-surface-muted uppercase tracking-widest block mt-1">Dollars per guest</span>
+            </div>
+            <a href="#reserve" class="btn-shimmer border border-primary text-primary-light hover:bg-primary hover:text-background py-3.5 text-center w-full block font-sans text-[9px] font-medium uppercase tracking-[0.25em] transition-all rounded-none">
+              Reserve Passage
+            </a>
+          </div>
+        </div>
+
+        <!-- Experience 2 -->
+        <div class="flex flex-col justify-between pt-12 lg:pt-0 lg:px-8">
+          <div>
+            <span class="text-[9px] tracking-widest text-primary uppercase font-light">ROMANTIC SOIREE</span>
+            <h3 class="font-serif text-3xl text-white font-light my-6">Couples Soirée</h3>
+            <p class="font-sans text-xs text-on-surface-muted leading-relaxed font-light mb-8">
+              Bespoke candlelight dining setting, a bottle of curated reserve champagne, custom culinary starters, tailored main courses, and an exclusive sharing dessert.
+            </p>
+          </div>
+
+          <div class="mt-auto">
+            <div class="mb-8 font-sans">
+              <span class="text-2xl font-light text-primary-light font-serif italic">Two Hundred &amp; Eighty</span>
+              <span class="text-[9px] text-on-surface-muted uppercase tracking-widest block mt-1">Dollars per couple</span>
+            </div>
+            <a href="#reserve" class="btn-shimmer border border-primary text-primary-light hover:bg-primary hover:text-background py-3.5 text-center w-full block font-sans text-[9px] font-medium uppercase tracking-[0.25em] transition-all rounded-none">
+              Reserve Passage
+            </a>
+          </div>
+        </div>
+
+        <!-- Experience 3 -->
+        <div class="flex flex-col justify-between pt-12 lg:pt-0 lg:px-8">
+          <div>
+            <span class="text-[9px] tracking-widest text-primary uppercase font-light">MIXOLOGY STUDY</span>
+            <h3 class="font-serif text-3xl text-white font-light my-6">Happy Hour</h3>
+            <p class="font-sans text-xs text-on-surface-muted leading-relaxed font-light mb-8">
+              Join our architectural open lounge between 5 PM and 7 PM for handcrafted small-batch mixology and complimentary seasonal culinary amuse-bouche.
+            </p>
+          </div>
+
+          <div class="mt-auto">
+            <div class="mb-8 flex flex-col font-sans">
+              <span class="text-lg text-primary-light uppercase font-light tracking-widest font-serif italic">Exclusive Lounge Passage</span>
+              <span class="text-[9px] text-on-surface-muted uppercase tracking-wider mt-1 font-light">Cedar-wood smoked cocktails &bull; 20% off all spirits</span>
+            </div>
+            <a href="#reserve" class="btn-shimmer border border-primary text-primary-light hover:bg-primary hover:text-background py-3.5 text-center w-full block font-sans text-[9px] font-medium uppercase tracking-[0.25em] transition-all rounded-none">
+              Reserve Lounge
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= GALLERY SECTION ================= -->
+    <section class="py-32 bg-surface/10 border-y border-white/[0.02]" id="gallery">
+      <div class="max-w-[1400px] mx-auto px-6 md:px-margin-desktop reveal-element">
+        
+        <!-- Header -->
+        <div class="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-20">
+          <div class="max-w-xl">
+            <span class="font-sans text-[10px] font-light text-primary tracking-[0.35em] uppercase mb-4 block">VISUAL ATMOSPHERE</span>
+            <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl text-white uppercase font-light tracking-wide">The Gallery</h2>
+          </div>
+          <p class="font-sans text-xs text-on-surface-muted max-w-sm font-light leading-relaxed">
+            Spacious glimpses of our dining space, wood-fired sizzles, and beautiful limestone wine cellar archives.
+          </p>
+        </div>
+
+        <!-- Asymmetric layout mosaic - Off balance human touch columns -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          
+          <!-- Image 1 -->
+          <div class="relative overflow-hidden group aspect-[3/4] cursor-pointer bg-surface border border-white/[0.02] mt-0 lg:mt-4" onclick="openLightbox('assets/gallery_steak.png', 'The Sizzle of Pure Craft', 'Butter-basted rosemary skillet ribeye cooked to perfection.')">
+            <img alt="Sizzling ribeye steak" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105" src="assets/gallery_steak.png" loading="lazy">
+            <div class="absolute inset-0 bg-background/95 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-between p-6">
+              <span class="text-[9px] tracking-widest text-primary uppercase font-light">I / CRAFT SIZZLE</span>
+              <div class="flex items-center justify-between border-t border-white/[0.05] pt-4">
+                <span class="font-serif italic text-white text-base">Ribeye Skill</span>
+                <span class="material-symbols-outlined text-primary text-xl font-light">fullscreen</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image 2 -->
+          <div class="relative overflow-hidden group aspect-[3/4] cursor-pointer bg-surface border border-white/[0.02] mt-0 lg:-mt-4" onclick="openLightbox('assets/gallery_wine.png', 'Vintage Red Pour', 'Sommelier-selected reserve cabernet poured in crystal facets.')">
+            <img alt="Fine red wine pouring into crystal glass" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105" src="assets/gallery_wine.png" loading="lazy">
+            <div class="absolute inset-0 bg-background/95 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-between p-6">
+              <span class="text-[9px] tracking-widest text-primary uppercase font-light">II / SOMMELIER CELLAR</span>
+              <div class="flex items-center justify-between border-t border-white/[0.05] pt-4">
+                <span class="font-serif italic text-white text-base">Cabernet Pour</span>
+                <span class="material-symbols-outlined text-primary text-xl font-light">fullscreen</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image 3 -->
+          <div class="relative overflow-hidden group aspect-[3/4] cursor-pointer bg-surface border border-white/[0.02] mt-0 lg:mt-6" onclick="openLightbox('assets/gallery_scallops.png', 'Seared Sea Scallops', 'Artisanal sea scallops with vibrant saffron dressing and microgreens.')">
+            <img alt="Artisanal plated scallops" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105" src="assets/gallery_scallops.png" loading="lazy">
+            <div class="absolute inset-0 bg-background/95 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-between p-6">
+              <span class="text-[9px] tracking-widest text-primary uppercase font-light">III / STARTER POETRY</span>
+              <div class="flex items-center justify-between border-t border-white/[0.05] pt-4">
+                <span class="font-serif italic text-white text-base">Seared Scallops</span>
+                <span class="material-symbols-outlined text-primary text-xl font-light">fullscreen</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image 4 -->
+          <div class="relative overflow-hidden group aspect-[3/4] cursor-pointer bg-surface border border-white/[0.02] mt-0 lg:-mt-6" onclick="openLightbox('assets/gallery_patio.png', 'The Outdoor Lounge', 'Warm candlelit seating setting beneath glowing lights.')">
+            <img alt="Elegant outdoor garden seating" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105" src="assets/gallery_patio.png" loading="lazy">
+            <div class="absolute inset-0 bg-background/95 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-between p-6">
+              <span class="text-[9px] tracking-widest text-primary uppercase font-light">IV / DINING HALL</span>
+              <div class="flex items-center justify-between border-t border-white/[0.05] pt-4">
+                <span class="font-serif italic text-white text-base">The Patio Setting</span>
+                <span class="material-symbols-outlined text-primary text-xl font-light">fullscreen</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CUSTOMER REVIEWS / CRITIQUES SECTION ================= -->
+    <section class="py-32 max-w-[1400px] mx-auto px-6 md:px-margin-desktop reveal-element" id="reviews">
+      
+      <!-- Center elegant quote structure -->
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="font-sans text-[10px] font-light text-primary tracking-[0.35em] uppercase mb-12 block">PRAISE &amp; CRITIQUES</span>
+        
+        <!-- Large quote mark -->
+        <span class="font-serif text-[100px] text-primary/10 leading-none select-none pointer-events-none block -mb-10">“</span>
+        
+        <!-- Slide container -->
+        <div class="relative overflow-hidden min-h-[220px]" id="reviews-carousel">
+          
+          <!-- Slide 1 -->
+          <div class="review-slide transition-opacity duration-700 opacity-100 flex flex-col items-center">
+            <p class="font-serif text-2xl md:text-3xl text-on-surface font-light leading-relaxed italic mb-8 max-w-3xl">
+              "The truffle carbonara pasta at L'Ambroisie is an absolute revelation. I have dined at Michelin star establishments globally, and the delicate equilibrium of textures and depth of flavor Chef Antoine has managed here rivals the absolute best."
+            </p>
+            <h4 class="font-sans text-[10px] tracking-[0.3em] text-primary-light uppercase mb-1 font-medium">Eleanor Gallagher</h4>
+            <span class="font-serif text-xs text-on-surface-muted italic">&mdash; Gastro Food Critic</span>
+          </div>
+
+          <!-- Slide 2 (Initially Hidden) -->
+          <div class="review-slide transition-opacity duration-700 opacity-0 absolute inset-0 flex flex-col items-center pointer-events-none">
+            <p class="font-serif text-2xl md:text-3xl text-on-surface font-light leading-relaxed italic mb-8 max-w-3xl">
+              "We booked the Couples Soirée package for my wife’s birthday. The team meticulously styled our candlelit setting, the smoked old fashioned was a spectacular show, and the grand cru lava soufflé was absolute perfection."
+            </p>
+            <h4 class="font-sans text-[10px] tracking-[0.3em] text-primary-light uppercase mb-1 font-medium">Marcus DuPont</h4>
+            <span class="font-serif text-xs text-on-surface-muted italic">&mdash; Anniversary Gala Host</span>
+          </div>
+
+          <!-- Slide 3 (Initially Hidden) -->
+          <div class="review-slide transition-opacity duration-700 opacity-0 absolute inset-0 flex flex-col items-center pointer-events-none">
+            <p class="font-serif text-2xl md:text-3xl text-on-surface font-light leading-relaxed italic mb-8 max-w-3xl">
+              "A spectacular sensory curation! Their red wine pairings were completely customized to our specific main courses, demonstrating exceptional attention to detail. The atmosphere was highly refined, warm, and romantic."
+            </p>
+            <h4 class="font-sans text-[10px] tracking-[0.3em] text-primary-light uppercase mb-1 font-medium">Dr. Sophia Ray</h4>
+            <span class="font-serif text-xs text-on-surface-muted italic">&mdash; Sommelier Enthusiast</span>
+          </div>
+
+        </div>
+
+        <!-- Dot Navigation Indicators -->
+        <div class="flex justify-center gap-3 mt-12 select-none">
+          <button class="w-1.5 h-1.5 rounded-full bg-primary transition-all duration-300" aria-label="Review page 1" onclick="switchReview(0)"></button>
+          <button class="w-1.5 h-1.5 rounded-full bg-white/20 hover:bg-white/40 transition-all duration-300" aria-label="Review page 2" onclick="switchReview(1)"></button>
+          <button class="w-1.5 h-1.5 rounded-full bg-white/20 hover:bg-white/40 transition-all duration-300" aria-label="Review page 3" onclick="switchReview(2)"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= RESERVATIONS SECTION ================= -->
+    <section class="py-32 bg-surface/5 border-t border-white/[0.02] relative" id="reserve">
+      
+      <div class="max-w-4xl mx-auto px-6 relative z-10 reveal-element">
+        <div class="p-8 md:p-16 border border-white/[0.04] bg-background/50 backdrop-blur-md shadow-2xl relative">
+          
+          <!-- Header -->
+          <div class="text-center max-w-xl mx-auto mb-16">
+            <span class="font-sans text-[10px] font-light text-primary tracking-[0.35em] uppercase mb-4 block">TABLE RESERVATION</span>
+            <h2 class="font-serif text-4xl md:text-5xl text-white uppercase tracking-wider font-light">Secure Table Passage</h2>
+            <div class="w-12 h-[1px] bg-primary/30 mx-auto"></div>
+          </div>
+
+          <!-- Reservation Form with thin minimalist bottom border lines -->
+          <form class="grid grid-cols-1 md:grid-cols-2 gap-10" id="reservationForm" onsubmit="handleReserveSubmit(event)" novalidate>
+            <!-- Full Name -->
+            <div class="flex flex-col gap-2 relative luxury-input">
+              <label class="font-sans text-[9px] font-medium text-primary uppercase tracking-[0.3em]" for="reserveName">Full Name</label>
+              <div class="luxury-input-focus-container flex flex-col">
+                <input class="w-full bg-transparent border-0 border-b border-white/[0.15] text-white placeholder-on-surface-muted/30 py-3 px-1 text-xs focus:ring-0 focus:border-primary rounded-none transition-colors" placeholder="e.g. Eleanor Gallagher" type="text" id="reserveName" required/>
+              </div>
+              <span class="text-[9px] tracking-widest uppercase text-red-400 mt-1 hidden animate-pulse" id="errorName">Please provide your full name.</span>
+            </div>
+
+            <!-- Phone Contact -->
+            <div class="flex flex-col gap-2 relative luxury-input">
+              <label class="font-sans text-[9px] font-medium text-primary uppercase tracking-[0.3em]" for="reservePhone">Phone Contact</label>
+              <div class="luxury-input-focus-container flex flex-col">
+                <input class="w-full bg-transparent border-0 border-b border-white/[0.15] text-white placeholder-on-surface-muted/30 py-3 px-1 text-xs focus:ring-0 focus:border-primary rounded-none transition-colors" placeholder="e.g. +1 (555) 019-2834" type="tel" id="reservePhone" required/>
+              </div>
+              <span class="text-[9px] tracking-widest uppercase text-red-400 mt-1 hidden animate-pulse" id="errorPhone">Please provide a valid phone contact.</span>
+            </div>
+
+            <!-- Date -->
+            <div class="flex flex-col gap-2 relative luxury-input">
+              <label class="font-sans text-[9px] font-medium text-primary uppercase tracking-[0.3em]" for="reserveDate">Date of Passage</label>
+              <div class="luxury-input-focus-container flex flex-col">
+                <input class="w-full bg-transparent border-0 border-b border-white/[0.15] text-white py-3 px-1 text-xs focus:ring-0 focus:border-primary rounded-none transition-colors dark:[color-scheme:dark]" type="date" id="reserveDate" required/>
+              </div>
+              <span class="text-[9px] tracking-widest uppercase text-red-400 mt-1 hidden" id="errorDate">Please select a valid date.</span>
+            </div>
+
+            <!-- Double Column for guests and hour -->
+            <div class="grid grid-cols-2 gap-6">
+              <div class="flex flex-col gap-2 relative luxury-input">
+                <label class="font-sans text-[9px] font-medium text-primary uppercase tracking-[0.3em]" for="reserveGuests">Guests</label>
+                <div class="luxury-input-focus-container flex flex-col">
+                  <select class="w-full bg-transparent border-0 border-b border-white/[0.15] text-white py-3 px-1 text-xs focus:ring-0 focus:border-primary rounded-none transition-colors dark:[color-scheme:dark]" id="reserveGuests" required>
+                    <option class="bg-background text-white" value="1">1 Guest</option>
+                    <option class="bg-background text-white" value="2" selected>2 Guests</option>
+                    <option class="bg-background text-white" value="3">3 Guests</option>
+                    <option class="bg-background text-white" value="4">4 Guests</option>
+                    <option class="bg-background text-white" value="5">5 Guests</option>
+                    <option class="bg-background text-white" value="6">6 Guests</option>
+                    <option class="bg-background text-white" value="10">7-10 Guests</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="flex flex-col gap-2 relative luxury-input">
+                <label class="font-sans text-[9px] font-medium text-primary uppercase tracking-[0.3em]" for="reserveTime">Hour</label>
+                <div class="luxury-input-focus-container flex flex-col">
+                  <select class="w-full bg-transparent border-0 border-b border-white/[0.15] text-white py-3 px-1 text-xs focus:ring-0 focus:border-primary rounded-none transition-colors dark:[color-scheme:dark]" id="reserveTime" required>
+                    <option class="bg-background text-white" value="" disabled selected>Dining Hour</option>
+                    <option class="bg-background text-white" value="17:00">5:00 PM</option>
+                    <option class="bg-background text-white" value="18:00">6:00 PM</option>
+                    <option class="bg-background text-white" value="19:00">7:00 PM</option>
+                    <option class="bg-background text-white" value="20:00">8:00 PM</option>
+                    <option class="bg-background text-white" value="21:00">9:00 PM</option>
+                    <option class="bg-background text-white" value="22:00">10:00 PM</option>
+                  </select>
+                </div>
+                <span class="text-[9px] tracking-widest uppercase text-red-400 mt-1 hidden" id="errorTime">Select Hour.</span>
+              </div>
+            </div>
+
+            <!-- Notes -->
+            <div class="flex flex-col gap-2 md:col-span-2 relative luxury-input">
+              <label class="font-sans text-[9px] font-medium text-primary uppercase tracking-[0.3em]" for="reserveNotes">Preferences &amp; Requests</label>
+              <div class="luxury-input-focus-container flex flex-col">
+                <textarea class="w-full bg-transparent border-0 border-b border-white/[0.15] text-white placeholder-on-surface-muted/30 py-3 px-1 text-xs focus:ring-0 focus:border-primary rounded-none transition-colors" rows="2" placeholder="e.g. Vegetarian specifications, romantic anniversary window placement..." id="reserveNotes"></textarea>
+              </div>
+            </div>
+
+            <div class="md:col-span-2 mt-6">
+              <button class="btn-shimmer w-full bg-primary hover:bg-primary-light text-background py-5 font-sans text-[10px] font-medium uppercase tracking-[0.3em] rounded-none transition-colors" type="submit">
+                Secure Gourmet Booking
+              </button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= LOCATION & CONTACTS ================= -->
+    <section class="py-32 max-w-[1400px] mx-auto px-6 md:px-margin-desktop reveal-element">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-stretch">
+        
+        <!-- Contact details -->
+        <div class="lg:col-span-5 flex flex-col justify-between py-4">
+          <div>
+            <span class="font-sans text-[10px] font-light text-primary tracking-[0.35em] uppercase mb-4 block">CONCIERGE DESK</span>
+            <h2 class="font-serif text-4xl md:text-5xl text-white mb-12 uppercase tracking-wide font-light">Passage &bull; Hours</h2>
+            
+            <div class="flex flex-col gap-8">
+              <!-- Address -->
+              <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-primary text-xl font-light">location_on</span>
+                <div>
+                  <h4 class="font-serif text-base text-white font-light mb-1">Our Sanctuary</h4>
+                  <p class="font-sans text-xs text-on-surface-muted font-light leading-relaxed">
+                    9 Place des Vosges, 75004 Paris, France
+                  </p>
+                </div>
+              </div>
+
+              <!-- Phone -->
+              <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-primary text-xl font-light">call</span>
+                <div>
+                  <h4 class="font-serif text-base text-white font-light mb-1">Direct Line</h4>
+                  <a href="tel:+33142785145" class="font-sans text-xs text-on-surface-muted hover:text-primary-light transition-colors font-light">
+                    +33 1 42 78 51 45
+                  </a>
+                </div>
+              </div>
+
+              <!-- Hours -->
+              <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-primary text-xl font-light">schedule</span>
+                <div>
+                  <h4 class="font-serif text-base text-white font-light mb-1">Operational Hours</h4>
+                  <p class="font-sans text-xs text-on-surface-muted font-light leading-relaxed">
+                    Tuesday &mdash; Saturday: <br>
+                    LUNCH: 12:00 PM &mdash; 2:30 PM <br>
+                    DINNER: 7:00 PM &mdash; 10:30 PM
+                  </p>
+                  <p class="font-sans text-[10px] text-primary italic mt-2">
+                    *Closed Sunday &amp; Monday for culinary exploration
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick link -->
+          <a href="#reserve" class="group flex items-center gap-2 font-sans text-[9px] font-medium tracking-[0.3em] text-primary-light uppercase mt-12 lg:mt-0 transition-colors">
+            Secure Table Passage <span class="material-symbols-outlined text-sm font-light group-hover:translate-x-1 transition-transform">arrow_forward</span>
+          </a>
+        </div>
+
+        <!-- High-fidelity custom dark vector map representation (Aesthetic, clean, bespoke) -->
+        <div class="lg:col-span-7 aspect-[16/10] lg:aspect-auto min-h-[300px] border border-white/[0.04] bg-surface relative flex items-center justify-center p-8 overflow-hidden select-none">
+          <!-- Architectural background visual vector elements -->
+          <div class="absolute inset-0 bg-[radial-gradient(#C5A059_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.03]"></div>
+          
+          <!-- Abstract clean luxury map drawing simulating Paris center map -->
+          <div class="absolute inset-0 opacity-[0.12] flex items-center justify-center pointer-events-none">
+            <!-- Simulated river Seine vector line -->
+            <svg class="w-full h-full stroke-primary-light" fill="none" viewBox="0 0 500 300" stroke-width="1.5">
+              <path d="M 0 160 C 120 180, 200 100, 320 120 C 440 140, 480 80, 500 70" />
+              <path d="M 80 0 L 80 300 M 240 0 L 240 300 M 420 0 L 420 300" stroke-width="0.5" stroke-dasharray="4,4"/>
+              <path d="M 0 90 L 500 90 M 0 210 L 500 210" stroke-width="0.5" stroke-dasharray="4,4"/>
+            </svg>
+          </div>
+
+          <!-- The Marker pin -->
+          <div class="relative z-10 flex flex-col items-center text-center">
+            <span class="material-symbols-outlined text-primary-light text-5xl font-light mb-4 animate-bounce">location_on</span>
+            <h3 class="font-serif text-2xl text-white font-light tracking-wide">Place des Vosges</h3>
+            <p class="font-sans text-[9px] text-primary uppercase tracking-[0.3em] mt-2 mb-4 font-light">L'AMBROISIE PARIS</p>
+            <div class="h-[1px] w-12 bg-primary/20 mb-6"></div>
+            <a href="https://maps.google.com" target="_blank" class="border border-white/10 hover:border-primary-light text-on-surface-muted hover:text-white px-5 py-2.5 font-sans text-[9px] tracking-[0.2em] uppercase transition-colors rounded-none">
+              Explore Route
+            </a>
+          </div>
+
+          <!-- Tiny status badge -->
+          <div class="absolute top-6 left-6 bg-background/90 px-4 py-1.5 border border-white/[0.04] text-[8px] tracking-[0.15em] text-primary-light uppercase">
+            Map Sanctuary
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-surface/20 border-t border-white/[0.02] py-20 relative">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-margin-desktop">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 lg:gap-8 items-start">
+        
+        <!-- Column 1: Brand Info -->
+        <div class="lg:col-span-4 flex flex-col gap-6">
+          <a href="#home" class="flex flex-col select-none">
+            <span class="font-serif tracking-[0.25em] text-2xl text-primary-light font-light leading-none">L'AMBROISIE</span>
+            <span class="text-[7px] tracking-[0.45em] text-on-surface-muted uppercase mt-1.5 font-light">HAUTE GASTRONOMIE</span>
+          </a>
+          <p class="font-sans text-xs text-on-surface-muted leading-relaxed font-light max-w-sm">
+            An award-winning editorial fine dining sanctuary designed to satisfy structural culinary aesthetics, offering wood-fired delicacies, handcrafted pasta and sommelier cellars in Paris.
+          </p>
+          <div class="flex gap-4 mt-2">
+            <a href="#" class="w-8 h-8 rounded-none border border-primary/20 flex items-center justify-center text-primary-light hover:border-primary-light transition-colors" aria-label="Instagram">
+              <span class="material-symbols-outlined text-sm font-light">camera_alt</span>
+            </a>
+            <a href="#" class="w-8 h-8 rounded-none border border-primary/20 flex items-center justify-center text-primary-light hover:border-primary-light transition-colors" aria-label="Facebook">
+              <span class="material-symbols-outlined text-sm font-light">public</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="lg:col-span-2">
+          <h4 class="font-serif text-sm text-primary-light font-medium tracking-wider mb-6 uppercase">Navigation</h4>
+          <ul class="flex flex-col gap-4 font-sans text-xs font-light text-on-surface-muted">
+            <li><a class="hover:text-primary-light transition-all duration-300" href="#home">Home</a></li>
+            <li><a class="hover:text-primary-light transition-all duration-300" href="#about">Heritage</a></li>
+            <li><a class="hover:text-primary-light transition-all duration-300" href="#menu">Masterpieces</a></li>
+            <li><a class="hover:text-primary-light transition-all duration-300" href="#offers">Experiences</a></li>
+            <li><a class="hover:text-primary-light transition-all duration-300" href="#gallery">The Gallery</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Concierge Support -->
+        <div class="lg:col-span-2">
+          <h4 class="font-serif text-sm text-primary-light font-medium tracking-wider mb-6 uppercase">Concierge</h4>
+          <ul class="flex flex-col gap-4 font-sans text-xs font-light text-on-surface-muted">
+            <li><a class="hover:text-primary-light transition-all duration-300" href="#reserve">Private Events</a></li>
+            <li><a class="hover:text-primary-light transition-all duration-300" href="#reserve">Catering Service</a></li>
+            <li><a class="hover:text-primary-light transition-all duration-300" href="#about">Dietary Details</a></li>
+            <li><a class="hover:text-primary-light transition-all duration-300" href="#reserve">Table Bookings</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Newsletter -->
+        <div class="lg:col-span-4 flex flex-col gap-4">
+          <h4 class="font-serif text-sm text-primary-light font-medium tracking-wider mb-2 uppercase">The Chronicle</h4>
+          <p class="font-sans text-xs text-on-surface-muted font-light leading-relaxed">
+            Subscribe to receive announcements regarding exclusive chef demonstration tastings and private lounge events.
+          </p>
+          <form class="flex border-b border-white/[0.15]" onsubmit="handleSubscribeSubmit(event)">
+            <input class="bg-transparent border-0 text-white placeholder-on-surface-muted/30 text-xs px-2 py-3 w-full focus:ring-0 focus:outline-none" placeholder="Your email address" type="email" id="subscribeEmail" required/>
+            <button class="text-primary-light hover:text-white font-sans text-[9px] font-medium px-4 uppercase tracking-widest transition-colors" type="submit">
+              SUBSCRIBE
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Divider / Bottom copy -->
+      <div class="mt-20 pt-8 border-t border-white/[0.03] flex flex-col sm:flex-row justify-between items-center gap-4 text-[9px] text-on-surface-muted/50 uppercase tracking-widest font-sans font-light">
+        <p>&copy; 2026 L'Ambroisie Gastronomy. All Rights Reserved.</p>
+        <div class="flex gap-8">
+          <a class="hover:text-primary-light transition-colors" href="#">Privacy Terms</a>
+          <a class="hover:text-primary-light transition-colors" href="#">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= DYNAMIC VISUAL LIGHTBOX MODAL ================= -->
+  <div class="fixed inset-0 z-[100] flex items-center justify-center pointer-events-none opacity-0 transition-opacity duration-300" id="lightboxModal">
+    <!-- Backdrop -->
+    <div class="absolute inset-0 bg-background/96 pointer-events-auto cursor-pointer" id="lightboxBackdrop"></div>
+    
+    <!-- Image Box -->
+    <div class="relative max-w-4xl w-[90%] z-10 flex flex-col pointer-events-auto" id="lightboxContent">
+      <button class="absolute -top-12 right-0 text-primary-light hover:text-white flex items-center gap-2 font-sans text-[10px] tracking-widest uppercase font-bold" id="closeLightboxBtn">
+        Close <span class="material-symbols-outlined text-lg leading-none font-light">close</span>
+      </button>
+      
+      <div class="border border-white/[0.04] bg-surface rounded-none overflow-hidden shadow-2xl">
+        <img class="w-full h-auto max-h-[70vh] object-contain bg-background" id="lightboxImage" src="" alt="Lightbox View"/>
+        <div class="p-6 bg-surface border-t border-white/[0.04]">
+          <h3 class="font-serif text-2xl text-primary-light mb-2 font-light" id="lightboxTitle">Image Title</h3>
+          <p class="font-sans text-xs text-on-surface-muted font-light" id="lightboxDesc">Detailed description goes here.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= BOOKING SUCCESS DETAILS CARD ================= -->
+  <div class="fixed inset-0 z-[100] flex items-center justify-center pointer-events-none opacity-0 transition-opacity duration-300" id="successModal">
+    <!-- Backdrop -->
+    <div class="absolute inset-0 bg-background/96 pointer-events-auto" id="successBackdrop"></div>
+    
+    <!-- Success Card -->
+    <div class="relative max-w-lg w-[90%] z-10 p-8 md:p-12 text-center rounded-none pointer-events-auto border border-white/[0.04] bg-surface shadow-2xl">
+      <span class="material-symbols-outlined text-primary text-5xl mb-6 select-none font-light">check_circle</span>
+      
+      <h3 class="font-serif text-3xl text-white font-light mb-2 tracking-wide">Table Passage Secured</h3>
+      <p class="font-sans text-[9px] text-primary uppercase tracking-[0.3em] mb-8 font-light">YOUR TABLE AWAITS</p>
+      
+      <!-- details block -->
+      <div class="bg-background border border-white/[0.03] p-6 text-left rounded-none mb-8 flex flex-col gap-4 font-sans text-xs leading-relaxed font-light">
+        <div class="flex justify-between border-b border-white/[0.03] pb-2">
+          <span class="text-on-surface-muted uppercase tracking-wider font-light text-[10px]">Patron</span>
+          <span class="text-white font-medium" id="confirmName">-</span>
+        </div>
+        <div class="flex justify-between border-b border-white/[0.03] pb-2">
+          <span class="text-on-surface-muted uppercase tracking-wider font-light text-[10px]">Guests</span>
+          <span class="text-white font-medium" id="confirmGuests">-</span>
+        </div>
+        <div class="flex justify-between border-b border-white/[0.03] pb-2">
+          <span class="text-on-surface-muted uppercase tracking-wider font-light text-[10px]">Date</span>
+          <span class="text-white font-medium" id="confirmDate">-</span>
+        </div>
+        <div class="flex justify-between pb-2">
+          <span class="text-on-surface-muted uppercase tracking-wider font-light text-[10px]">Dining Hour</span>
+          <span class="text-primary-light font-medium" id="confirmTime">-</span>
+        </div>
+      </div>
+
+      <p class="font-sans text-xs text-on-surface-muted font-light mb-8 leading-relaxed">
+        We have logged your request. Our direct concierge desk will contact you shortly to validate specifications.
+      </p>
+
+      <button class="border border-primary text-background bg-primary hover:bg-transparent hover:text-primary-light font-sans text-[10px] font-medium w-full py-4 uppercase tracking-[0.25em] rounded-none transition-colors" id="closeSuccessBtn">
+        Close Passage
+      </button>
+    </div>
+  </div>
+
+  <!-- ================= CHRONICLE TOAST NOTIFICATION ================= -->
+  <div class="fixed bottom-6 right-6 z-[101] pointer-events-none transform translate-y-12 opacity-0 transition-all duration-500 max-w-sm w-[90%] flex" id="toastBox">
+    <div class="p-5 border border-white/[0.05] bg-surface shadow-2xl flex items-start gap-4 pointer-events-auto rounded-none">
+      <span class="material-symbols-outlined text-primary-light text-2xl select-none font-light mt-0.5" id="toastIcon">mail</span>
+      <div class="flex-1">
+        <h4 class="font-serif text-base text-primary-light font-light mb-1" id="toastTitle">Chronicle Invitation</h4>
+        <p class="font-sans text-xs text-on-surface-muted leading-relaxed font-light" id="toastDesc">Successfully subscribed.</p>
+      </div>
+      <button class="material-symbols-outlined text-on-surface-muted/40 hover:text-primary-light text-lg" onclick="hideToast()">
+        close
+      </button>
+    </div>
+  </div>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script>
+    /* ================= 1. SCROLL REVEAL EFFECT ================= */
+    const revealOptions = {
+      threshold: 0.05,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, revealOptions);
+
+    // Track sections & reveal
+    document.querySelectorAll('section, .reveal-element').forEach(elem => {
+      elem.classList.add('reveal-element');
+      revealObserver.observe(elem);
+    });
+
+    /* ================= 2. HEADER RESIZE ON SCROLL ================= */
+    const header = document.getElementById('mainHeader');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.remove('py-6', 'md:py-8');
+        header.classList.add('py-4', 'bg-background/95', 'shadow-lg');
+      } else {
+        header.classList.remove('py-4', 'shadow-lg');
+        header.classList.add('py-6', 'md:py-8', 'bg-background/80');
+      }
+    });
+
+    /* ================= 3. MOBILE FULLSCREEN OVERLAY ================= */
+    const burgerBtn = document.getElementById('burgerBtn');
+    const closeDrawerBtn = document.getElementById('closeDrawerBtn');
+    const drawerOverlay = document.getElementById('drawerOverlay');
+
+    function openDrawer() {
+      drawerOverlay.classList.remove('pointer-events-none', 'opacity-0');
+      drawerOverlay.classList.add('opacity-100');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closeDrawer() {
+      drawerOverlay.classList.add('pointer-events-none', 'opacity-0');
+      drawerOverlay.classList.remove('opacity-100');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    burgerBtn.addEventListener('click', openDrawer);
+    closeDrawerBtn.addEventListener('click', closeDrawer);
+
+    /* ================= 4. MENU CATEGORY FILTERING & COLLATERAL PHOTO SYNC ================= */
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const menuGridItems = document.querySelectorAll('#menu-list > div');
+    const menuRotatorImages = document.querySelectorAll('.menu-rotator-img');
+
+    // Simple Map of categories to specific rotator image highlights
+    const imageMap = {
+      all: 'img-signature',
+      signature: 'img-signature',
+      pasta: 'img-pasta',
+      dessert: 'img-dessert',
+      drinks: 'img-drinks'
+    };
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Manage active styling
+        filterButtons.forEach(b => {
+          b.classList.remove('text-primary-light', 'active');
+          b.classList.add('text-on-surface-muted');
+        });
+
+        btn.classList.remove('text-on-surface-muted');
+        btn.classList.add('text-primary-light', 'active');
+
+        const category = btn.getAttribute('data-category');
+
+        // Sync right side exquisite photo frame
+        const targetImageId = imageMap[category] || 'img-signature';
+        menuRotatorImages.forEach(img => {
+          if (img.id === targetImageId) {
+            img.classList.remove('opacity-0');
+            img.classList.add('opacity-100');
+          } else {
+            img.classList.remove('opacity-100');
+            img.classList.add('opacity-0');
+          }
+        });
+
+        // Filter animations
+        menuGridItems.forEach(item => {
+          const itemCategory = item.getAttribute('data-category');
+          
+          if (category === 'all' || itemCategory === category) {
+            item.style.display = 'flex';
+            setTimeout(() => {
+              item.style.opacity = '1';
+              item.style.transform = 'scale(1)';
+            }, 50);
+          } else {
+            item.style.opacity = '0';
+            item.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+              item.style.display = 'none';
+            }, 400);
+          }
+        });
+      });
+    });
+
+    // Scroll filter Row
+    const filtersRow = document.getElementById('filters-container');
+    if (filtersRow) {
+      filtersRow.addEventListener('wheel', (evt) => {
+        evt.preventDefault();
+        filtersRow.scrollLeft += evt.deltaY * 0.7;
+      });
+    }
+
+    /* ================= 5. EDITORIAL GALLERY LIGHTBOX ================= */
+    const lightboxModal = document.getElementById('lightboxModal');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxTitle = document.getElementById('lightboxTitle');
+    const lightboxDesc = document.getElementById('lightboxDesc');
+    const closeLightboxBtn = document.getElementById('closeLightboxBtn');
+    const lightboxBackdrop = document.getElementById('lightboxBackdrop');
+
+    function openLightbox(src, title, desc) {
+      lightboxImage.setAttribute('src', src);
+      lightboxTitle.textContent = title;
+      lightboxDesc.textContent = desc;
+      
+      lightboxModal.classList.remove('pointer-events-none', 'opacity-0');
+      lightboxModal.classList.add('opacity-100');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closeLightbox() {
+      lightboxModal.classList.add('pointer-events-none', 'opacity-0');
+      lightboxModal.classList.remove('opacity-100');
+      document.body.classList.remove('overflow-hidden');
+      setTimeout(() => {
+        lightboxImage.setAttribute('src', '');
+      }, 300);
+    }
+
+    closeLightboxBtn.addEventListener('click', closeLightbox);
+    lightboxBackdrop.addEventListener('click', closeLightbox);
+
+    /* ================= 6. REVIEWS SLIDER CONTROL ================= */
+    let currentReview = 0;
+    const slides = document.querySelectorAll('.review-slide');
+    const dots = document.querySelectorAll('[aria-label^="Review page"]');
+
+    function switchReview(index) {
+      if (index === currentReview) return;
+
+      // Reset slides
+      slides.forEach((slide, i) => {
+        slide.classList.remove('opacity-100');
+        slide.classList.add('opacity-0');
+        if (i !== index) {
+          slide.classList.add('absolute', 'inset-0', 'pointer-events-none');
+        } else {
+          slide.classList.remove('absolute', 'inset-0', 'pointer-events-none');
+        }
+      });
+
+      // Show selected slide
+      slides[index].classList.remove('opacity-0');
+      slides[index].classList.add('opacity-100');
+
+      // Update dots
+      dots.forEach((dot, i) => {
+        if (i === index) {
+          dot.classList.remove('bg-white/20');
+          dot.classList.add('bg-primary');
+        } else {
+          dot.classList.remove('bg-primary');
+          dot.classList.add('bg-white/20');
+        }
+      });
+
+      currentReview = index;
+    }
+
+    // Auto rotate review slides every 8 seconds
+    setInterval(() => {
+      let nextIndex = (currentReview + 1) % slides.length;
+      switchReview(nextIndex);
+    }, 8000);
+
+    /* ================= 7. RESERVATION VALIDATOR ================= */
+    const reservationForm = document.getElementById('reservationForm');
+    const successModal = document.getElementById('successModal');
+    const closeSuccessBtn = document.getElementById('closeSuccessBtn');
+
+    const reserveName = document.getElementById('reserveName');
+    const reservePhone = document.getElementById('reservePhone');
+    const reserveDate = document.getElementById('reserveDate');
+    const reserveGuests = document.getElementById('reserveGuests');
+    const reserveTime = document.getElementById('reserveTime');
+
+    const errorName = document.getElementById('errorName');
+    const errorPhone = document.getElementById('errorPhone');
+    const errorDate = document.getElementById('errorDate');
+    const errorTime = document.getElementById('errorTime');
+
+    function validateField(input, errorBlock, condition) {
+      if (condition) {
+        input.classList.remove('border-red-400', 'focus:border-red-400');
+        input.classList.add('border-white/[0.15]', 'focus:border-primary');
+        errorBlock.classList.add('hidden');
+        return true;
+      } else {
+        input.classList.remove('border-white/[0.15]', 'focus:border-primary');
+        input.classList.add('border-red-400', 'focus:border-red-400');
+        errorBlock.classList.remove('hidden');
+        return false;
+      }
+    }
+
+    function handleReserveSubmit(event) {
+      event.preventDefault();
+
+      const isNameValid = validateField(reserveName, errorName, reserveName.value.trim().length > 1);
+      const isPhoneValid = validateField(reservePhone, errorPhone, reservePhone.value.trim().length >= 6);
+      const isDateValid = validateField(reserveDate, errorDate, reserveDate.value !== "");
+      const isTimeValid = validateField(reserveTime, errorTime, reserveTime.value !== null && reserveTime.value !== "");
+
+      if (isNameValid && isPhoneValid && isDateValid && isTimeValid) {
+        // Date formatting
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const prettyDate = new Date(reserveDate.value).toLocaleDateString('en-US', options);
+
+        // Success card details
+        document.getElementById('confirmName').textContent = reserveName.value.trim();
+        document.getElementById('confirmGuests').textContent = reserveGuests.value === "10" ? "7-10 Guests" : reserveGuests.value + " Guests";
+        document.getElementById('confirmDate').textContent = prettyDate;
+        
+        // Time format
+        let rawTime = reserveTime.value;
+        let [hours, minutes] = rawTime.split(':');
+        let suffix = hours >= 12 ? 'PM' : 'AM';
+        let displayHours = hours % 12 || 12;
+        document.getElementById('confirmTime').textContent = `${displayHours}:${minutes} ${suffix}`;
+
+        // Show Modal
+        successModal.classList.remove('pointer-events-none', 'opacity-0');
+        successModal.classList.add('opacity-100');
+        document.body.classList.add('overflow-hidden');
+
+        reservationForm.reset();
+      }
+    }
+
+    closeSuccessBtn.addEventListener('click', () => {
+      successModal.classList.add('pointer-events-none', 'opacity-0');
+      successModal.classList.remove('opacity-100');
+      document.body.classList.remove('overflow-hidden');
+    });
+
+    /* ================= 8. CHRONICLE NEWSLETTER TOAST ================= */
+    const toastBox = document.getElementById('toastBox');
+    const toastIcon = document.getElementById('toastIcon');
+    const toastTitle = document.getElementById('toastTitle');
+    const toastDesc = document.getElementById('toastDesc');
+    let toastTimeout;
+
+    function triggerToast(icon, title, desc) {
+      clearTimeout(toastTimeout);
+
+      toastIcon.textContent = icon;
+      toastTitle.textContent = title;
+      toastDesc.textContent = desc;
+
+      toastBox.classList.remove('translate-y-12', 'opacity-0', 'pointer-events-none');
+      toastBox.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
+
+      toastTimeout = setTimeout(hideToast, 5000);
+    }
+
+    function hideToast() {
+      toastBox.classList.add('translate-y-12', 'opacity-0', 'pointer-events-none');
+      toastBox.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
+    }
+
+    function handleSubscribeSubmit(event) {
+      event.preventDefault();
+      const emailInput = document.getElementById('subscribeEmail');
+      const email = emailInput.value.trim();
+
+      if (email.length > 5 && email.includes('@')) {
+        emailInput.value = '';
+        triggerToast('mail', 'Gourmet Invitation', `An exclusive chef chronicles update is sent to: ${email}`);
+      }
+    }
+  </script>
+</body>
+</html>

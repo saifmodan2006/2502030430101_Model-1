@@ -1,0 +1,281 @@
+Bootstrap Classes Used in This Restaurant Project by Task
+
+Task 1. Basic HTML Structure
+This task uses Bootstrap through the CDN and the page container layout.
+   - container
+   - py-5
+   - bg-light
+   - d-block
+   - w-100
+
+Task 2. Restaurant Header
+This task uses Bootstrap typography and spacing classes.
+   - container
+   - text-center
+   - text-md-start
+   - display-5
+   - fw-bold
+   - mb-1
+   - lead
+   - mb-0
+
+Task 3. Responsive Navbar
+This task uses Bootstrap navbar classes.
+   - navbar
+   - navbar-expand-lg
+   - navbar-dark
+   - navbar-brand
+   - navbar-toggler
+   - navbar-toggler-icon
+   - collapse
+   - navbar-collapse
+   - navbar-nav
+   - ms-auto
+   - mb-2
+   - mb-lg-0
+   - gap-lg-2
+   - nav-item
+   - nav-link
+   - active
+
+Task 4. Hero Section
+This task uses Bootstrap grid, utilities, and button classes.
+   - container
+   - position-relative
+   - z-1
+   - row
+   - align-items-center
+   - col-lg-6
+   - text-white
+   - text-uppercase
+   - fw-semibold
+   - mb-2
+   - display-4
+   - fw-bold
+   - mb-3
+   - fs-5
+   - mb-4
+   - btn
+   - btn-warning
+   - btn-lg
+   - px-4
+
+Task 5. Food Menu Using Cards
+This task uses Bootstrap card and button classes.
+   - card
+   - card-img-top
+   - card-body
+   - card-title
+   - card-text
+   - btn
+   - btn-outline-dark
+   - btn-sm
+   - fw-bold
+   - text-success
+
+Task 6. Responsive Grid Layout
+This task uses Bootstrap responsive grid classes for 3-2-1 layout.
+   - container
+   - row
+   - g-4
+   - col-12
+   - col-md-6
+   - col-lg-4
+   - h-100
+
+Task 7. Restaurant Services Section
+This task uses Bootstrap grid, spacing, and typography classes.
+   - py-5
+   - container
+   - row
+   - mb-4
+   - col-lg-8
+   - mx-auto
+   - text-center
+   - g-4
+   - col-md-6
+   - col-lg-3
+   - h-100
+   - p-4
+   - rounded-4
+   - shadow-sm
+   - bg-white
+   - mb-3
+   - h5
+   - fw-semibold
+   - text-muted
+   - mb-0
+
+Task 8. Image Gallery
+This task uses Bootstrap responsive images and grid classes.
+   - py-5
+   - container
+   - row
+   - mb-4
+   - mx-auto
+   - text-center
+   - g-3
+   - col-12
+   - col-md-6
+   - col-lg-4
+   - img-fluid
+   - rounded-4
+
+Task 9. Customer Review Section
+This task uses Bootstrap cards, flex, and spacing classes.
+   - py-5
+   - bg-light
+   - container
+   - row
+   - mb-4
+   - col-lg-8
+   - mx-auto
+   - text-center
+   - g-4
+   - col-md-6
+   - col-lg-4
+   - card
+   - border-0
+   - shadow-sm
+   - h-100
+   - card-body
+   - d-flex
+   - align-items-center
+   - gap-3
+   - rounded-circle
+   - h6
+   - mb-1
+   - text-warning
+   - text-muted
+
+Task 10. Contact Form
+This task uses Bootstrap form, card, and layout classes.
+   - py-5
+   - container
+   - row
+   - g-4
+   - align-items-stretch
+   - col-lg-5
+   - col-lg-7
+   - card
+   - border-0
+   - shadow-sm
+   - h-100
+   - card-body
+   - p-4
+   - p-lg-5
+   - row
+   - g-3
+   - col-md-6
+   - col-12
+   - form-label
+   - form-control
+   - form-control-lg
+   - btn
+   - btn-dark
+   - btn-lg
+   - px-4
+
+Task 11. Footer
+This task uses Bootstrap spacing and alignment utilities.
+   - footer-section
+   - py-4
+   - text-white
+   - container
+   - row
+   - g-3
+   - align-items-center
+   - col-md-4
+   - text-center
+   - text-md-start
+   - text-md-end
+   - mb-1
+   - mb-0
+   - me-3
+
+Task 12. Fully Responsive Website
+This task is handled by Bootstrap responsive utilities and grid breakpoints.
+   - container
+   - row
+   - col-12
+   - col-md-6
+   - col-lg-3
+   - col-lg-4
+   - col-lg-5
+   - col-lg-6
+   - col-lg-7
+   - d-none
+   - d-md-block
+   - text-md-start
+   - text-md-end
+   - navbar-expand-lg
+   - img-fluid
+
+Task 13. Bootstrap Modal
+This task uses the Bootstrap modal component.
+   - modal
+   - fade
+   - modal-dialog
+   - modal-dialog-centered
+   - modal-content
+   - border-0
+   - rounded-4
+   - overflow-hidden
+   - modal-header
+   - bg-dark
+   - text-white
+   - modal-title
+   - btn-close
+   - btn-close-white
+   - modal-body
+   - mb-3
+   - w-100
+   - btn-warning
+   - fw-semibold
+
+Task 14. Carousel Slider
+This task uses the Bootstrap carousel component.
+   - carousel
+   - slide
+   - shadow
+   - rounded-4
+   - overflow-hidden
+   - carousel-inner
+   - carousel-item
+   - active
+   - d-block
+   - w-100
+   - carousel-caption
+   - d-none
+   - d-md-block
+   - text-start
+   - carousel-control-prev
+   - carousel-control-prev-icon
+   - carousel-control-next
+   - carousel-control-next-icon
+   - visually-hidden
+
+Task 15. Final Mini Project
+This task combines all Bootstrap classes from the full page.
+   - container
+   - row
+   - col-12
+   - col-md-6
+   - col-lg-3
+   - col-lg-4
+   - col-lg-5
+   - col-lg-6
+   - col-lg-7
+   - navbar
+   - card
+   - carousel
+   - modal
+   - btn
+   - form-control
+   - img-fluid
+   - d-flex
+   - text-center
+   - shadow-sm
+
+Note:
+These classes are used across the code to handle spacing, grid layout, typography, buttons, cards, responsiveness, and components.
